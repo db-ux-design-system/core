@@ -4,7 +4,7 @@
 
 
 ## Project Feedback and Issue Reporting
-Welcome to our Design repository! This repository is dedicated to gathering design feedback, feature requests and design bug reports for Versions 2 (v2) and Version 3 (v3) of our Design System.
+Welcome to our Core repository! This repository is dedicated to gathering general core feedback/feature requests, design feedback/feature requests and design bug reports for Versions 2 (v2) and Version 3 (v3) of our Design System.
 
 ## How to Contribute
 
