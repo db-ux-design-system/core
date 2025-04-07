@@ -6,8 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report! Feedback by the community has a very high value for us, to improve our work and to have every other user benefit from it as well. 🙂
-        
+        Thanks for taking the time to fill out this bug report! 
         Please make sure that you are using the latest version of the tool. Especially in Sketch, the use of an older version can lead to errors in the components that no longer occur in the current version.
 
   - type: checkboxes
