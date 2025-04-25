@@ -38,7 +38,7 @@ body:
   - type: textarea
     id: reproduction_fiddle
     attributes:
-      description: A clear and concise description of what the bug is.
+      description: A clear and concise description of what the bug is. ⚠️ Please also mention the density if you are not working with regular.
       label: Reproduction case
       placeholder: How can we reproduce the error?
     validations:
