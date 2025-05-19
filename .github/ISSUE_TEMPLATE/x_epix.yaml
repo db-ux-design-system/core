@@ -1,0 +1,57 @@
+name: Epic (for Core Team only)
+description: Template for Core Team
+labels: [version3]
+type: Epic
+body:
+  - type: markdown
+    attributes:
+      value: |
+        _Dieses Issue dient als zentrale Sammelstelle für die Entwicklung der Tag Komponente._
+        
+        ---
+  
+  - type: textarea
+    id: description
+    attributes:
+      description: Give a clear and precise description of the new feature. If possible, be sure to include examples, screenshots or videos to illustrate your request.
+      label: Description
+      placeholder: 
+    validations:
+      required: true
+
+  - type: textarea
+    id: showcase
+    attributes:
+      description: URL of the Showcase
+      label: Description
+      placeholder: https://design-system.deutschebahn.com/core-web/review/main/components/tag/overview
+    validations:
+      required: false
+
+  - type: textarea
+    id: figma
+    attributes:
+      description: URL of the Figma file
+      label: Figma
+      placeholder: 
+    validations:
+      required: false
+
+
+  - type: textarea
+    id: documentation
+    attributes:
+      description: URL of the Documentation
+      label: Documentation
+      placeholder: 
+    validations:
+      required: false
+
+  - type: textarea
+    id: tags
+    attributes:
+      description: Alternative names
+      label: 🏷️      
+      placeholder: 
+    validations:
+      required: false
