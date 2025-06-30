@@ -27,7 +27,7 @@ body:
       required: true
 
     - type: input
-    id: other-businessunit
+    id: otherbusinessunit
     attributes:
       label: If you have selected “other” above, please enter your area or business unit here
     validations:
