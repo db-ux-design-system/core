@@ -11,6 +11,9 @@ body:
 
   - type: dropdown
     id: businessunit
+    
+  - type: dropdown
+    id: businessunit
     attributes:
       label: Which DB business unit do you work for?
       options:
@@ -25,15 +28,6 @@ body:
         - other (please specify below)
     validations:
       required: true
-
-    - type: input
-    id: otherbusinessunit
-    attributes:
-      label: If you have selected “other” above, please enter your area or business unit here
-    validations:
-      required: false
-
-
 
   - type: checkboxes
     id: ds-library
