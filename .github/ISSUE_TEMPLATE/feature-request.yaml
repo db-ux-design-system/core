@@ -11,6 +11,30 @@ body:
         
         📣 Please create a separate issue for each feature.
   
+  - type: dropdown
+    id: businessunit
+    attributes:
+      label: Which DB business unit do you work for?
+      options:
+        - DB Systel GmbH
+        - DB Fernverkehr AG
+        - DB Regio AG
+        - DB InfraGO AG
+        - DB Cargo AG
+        - DB Vertrieb GmbH
+        - DB Energie
+        - DB Connect
+        - other (please specify below)
+    validations:
+      required: true
+
+  - type: input
+    id: otherbusinessunit
+    attributes:
+      label: If you have selected “other” above, please enter your area or business unit here
+    validations:
+      required: false
+  
   - type: textarea
     id: description
     attributes:
