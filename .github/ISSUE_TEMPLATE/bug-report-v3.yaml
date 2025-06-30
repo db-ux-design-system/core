@@ -27,12 +27,11 @@ body:
       required: true
 
   - type: input
-    id: otherbusinessunit
-    attributes:
-      label: If you have selected “other” above, please enter your area or business unit here
-    validations:
-      required: false
-
+    id: otherbusinessunit
+    attributes:
+      label: If you have selected “other” above, please enter your area or business unit here
+    validations:
+      required: false
 
 
   - type: checkboxes
