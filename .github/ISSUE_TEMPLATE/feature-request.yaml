@@ -42,13 +42,6 @@ body:
       label: What project are you working on?
     validations:
       required: true   
-
-  - type: input
-    id: otherbusinessunit
-    attributes:
-      label: If you have selected “other” above, please enter your area or business unit here
-    validations:
-      required: false
   
   - type: textarea
     id: description
