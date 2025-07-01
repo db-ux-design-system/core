@@ -38,15 +38,13 @@ body:
     id: client
     attributes:
       label: If you selected "DB Systel": who is your customer?
-      description: If you have selected “other” above, please enter your area or business unit here
     validations:
       required: false
       
   - type: input
-    id: client
+    id: project
     attributes:
       label: What project are you working on?
-      description: If you have selected “other” above, please enter your area or business unit here
     validations:
       required: true
  
