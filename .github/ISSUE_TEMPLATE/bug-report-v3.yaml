@@ -30,14 +30,8 @@ body:
   - type: input
     id: businessunit2
     attributes:
-      label: If you have selected ”other” above, please enter your area or business unit here
-    validations:
-      required: false
-      
-  - type: input
-    id: client
-    attributes:
-      label: If you selected ”DB Systel” - who is your customer?
+      label: If you have selected ”other” above, please enter your area or business unit here. 
+And if you selected ”DB Systel” - who is your customer?
     validations:
       required: false
       
