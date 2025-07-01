@@ -28,13 +28,28 @@ body:
       required: true
 
   - type: input
-    id: otherbusinessunit
+    id: businessunit2
     attributes:
       label: If you have selected “other” above, please enter your area or business unit here
     validations:
       required: false
-
-
+      
+  - type: input
+    id: client
+    attributes:
+      label: If you selected "DB Systel": who is your customer?
+      description: If you have selected “other” above, please enter your area or business unit here
+    validations:
+      required: false
+      
+  - type: input
+    id: client
+    attributes:
+      label: What project are you working on?
+      description: If you have selected “other” above, please enter your area or business unit here
+    validations:
+      required: true
+ 
   - type: checkboxes
     id: ds-library
       
