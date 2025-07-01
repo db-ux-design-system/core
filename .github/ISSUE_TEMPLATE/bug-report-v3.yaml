@@ -14,7 +14,7 @@ body:
     attributes:
       label: Which DB business unit do you work for?
       options:
-        - DB Systel GmbH
+        - DB Systel GmbH (please name your customer below)
         - DB Fernverkehr AG
         - DB Regio AG
         - DB InfraGO AG
@@ -30,7 +30,7 @@ body:
   - type: input
     id: businessunit2
     attributes:
-      label: If you have selected ”other” above, please enter your area or business unit here. And if you selected ”DB Systel” - who is your customer?
+      label: ”DB Systel” please enter your customer / ”other” please enter your area or business unit.
     validations:
       required: false
       
