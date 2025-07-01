@@ -30,6 +30,20 @@ body:
       required: true
 
   - type: input
+    id: businessunit2
+    attributes:
+      label: ”DB Systel” please enter your customer / ”other” please enter your area or business unit.
+    validations:
+      required: false
+      
+  - type: input
+    id: project
+    attributes:
+      label: What project are you working on?
+    validations:
+      required: true   
+
+  - type: input
     id: otherbusinessunit
     attributes:
       label: If you have selected “other” above, please enter your area or business unit here
