@@ -1,6 +1,6 @@
 name: 🐞 Design Bug Report - Version 2
 description: Create a report to help us improve
-labels: [version2]
+labels: ["version2","👩‍👧‍👦community feedback"]
 type: Bug
 body:
   - type: markdown
