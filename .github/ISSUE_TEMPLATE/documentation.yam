@@ -1,6 +1,6 @@
 name: 📕 Documentation
 description: Create an issue that affects the DB UX Design System documentation
-labels: [📕 documentation]
+labels: ["📕documentation","👩‍👧‍👦community feedback"]
 body:
   - type: markdown
     attributes:
