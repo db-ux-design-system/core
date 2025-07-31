@@ -26,7 +26,7 @@ body:
         - DB Connect
         - other (please specify below)
     validations:
-      required: true
+      required: false
 
   - type: input
     id: businessunit2
@@ -40,7 +40,7 @@ body:
     attributes:
       label: What project are you working on?
     validations:
-      required: true
+      required: false
  
   - type: checkboxes
     id: ds-library
