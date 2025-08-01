@@ -11,17 +11,26 @@ body:
         
         📣 Please create a separate issue for each feature.
   
+  - type: textarea
+    id: description
+    attributes:
+      description: Give a clear and precise description of the new feature. If possible, be sure to include examples, screenshots or videos to illustrate your request.
+      label: Description
+      placeholder: 
+    validations:
+      required: true
+
   - type: dropdown
     id: businessunit
     attributes:
       label: Which DB business unit do you work for?
       options:
-        - DB Systel GmbH
+        - DB Systel GmbH (please name your customer below)
         - DB Fernverkehr AG
         - DB Regio AG
         - DB InfraGO AG
-        - DB Konzern
         - DB Cargo AG
+        - DB Konzern
         - DB Vertrieb GmbH
         - DB Energie
         - DB Connect
@@ -35,19 +44,10 @@ body:
       label: ”DB Systel” please enter your customer / ”other” please enter your area or business unit.
     validations:
       required: false
-      
+
   - type: input
     id: project
     attributes:
       label: What project are you working on?
     validations:
-      required: false   
-  
-  - type: textarea
-    id: description
-    attributes:
-      description: Give a clear and precise description of the new feature. If possible, be sure to include examples, screenshots or videos to illustrate your request.
-      label: Description
-      placeholder: 
-    validations:
-      required: true
+      required: false
