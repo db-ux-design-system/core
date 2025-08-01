@@ -65,10 +65,6 @@ body:
       label: Add any other context about the problem here.
     validations:
       required: false
-    attributes:
-      label: What project are you working on?
-    validations:
-      required: false
 
   - type: dropdown
     id: businessunit
