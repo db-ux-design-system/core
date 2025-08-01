@@ -100,19 +100,3 @@ body:
     validations:
       required: true
       required: false
-
-  - type: checkboxes
-    id: ds-library
-
-    attributes:
-      label: Which design system content is impacted? * (PLEASE SELECT THE LIBRARY)
-      description: Select all the ones that apply, to the best of your knowledge.
-      options:
-        - label: Figma Core Foundations
-        - label: Figma Core Components
-        - label: Figma Core Patterns
-        - label: Figma DB Theme Icons (functional, illustrative)
-        - label: Sketch Core (Foundations/Components/Patterns)
-        - label: Sketch Core Icons
-        - label: Documentation
-
