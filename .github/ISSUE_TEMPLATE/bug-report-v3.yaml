@@ -11,7 +11,6 @@ body:
  
   - type: checkboxes
     id: ds-library
-      
     attributes:
       label: Which design system content is impacted? * (PLEASE SELECT THE LIBRARY)
       description: Select all the ones that apply, to the best of your knowledge.
@@ -23,8 +22,6 @@ body:
         - label: Sketch Core (Foundations/Components/Patterns)
         - label: Sketch Core Icons
         - label: Documentation
-
-
 
   - type: input
     id: ds-version
@@ -64,31 +61,6 @@ body:
     id: additional_information
     attributes:
       label: Add any other context about the problem here.
-    validations:
-      required: false
-
-- type: dropdown
-    id: businessunit
-    attributes:
-      label: Which DB business unit do you work for?
-      options:
-        - DB Systel GmbH (please name your customer below)
-        - DB Fernverkehr AG
-        - DB Regio AG
-        - DB InfraGO AG
-        - DB Cargo AG
-        - DB Konzern
-        - DB Vertrieb GmbH
-        - DB Energie
-        - DB Connect
-        - other (please specify below)
-    validations:
-      required: false
-
-  - type: input
-    id: businessunit2
-    attributes:
-      label: ”DB Systel” please enter your customer / ”other” please enter your area or business unit.
     validations:
       required: false
 
