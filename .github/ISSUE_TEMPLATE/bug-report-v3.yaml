@@ -66,6 +66,7 @@ body:
       label: Add any other context about the problem here.
     validations:
       required: false
+      
 - type: dropdown
     id: businessunit
     attributes:
@@ -83,6 +84,7 @@ body:
         - other (please specify below)
     validations:
       required: false
+      
   - type: input
     id: businessunit2
     attributes:
