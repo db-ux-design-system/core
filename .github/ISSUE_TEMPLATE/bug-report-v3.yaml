@@ -67,7 +67,7 @@ body:
     validations:
       required: false
 
-        - type: dropdown
+- type: dropdown
     id: businessunit
     attributes:
       label: Which DB business unit do you work for?
@@ -83,7 +83,6 @@ body:
         - DB Connect
         - other (please specify below)
     validations:
-      required: true
       required: false
 
   - type: input
@@ -98,5 +97,4 @@ body:
     attributes:
       label: What project are you working on?
     validations:
-      required: true
       required: false
