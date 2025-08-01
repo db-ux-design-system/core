@@ -2,7 +2,6 @@ name: 🐞 Design Bug Report - Version 3
 description: Create a report to help us improve
 type: Bug
 labels: ["👩‍👧‍👦community feedback"]
-
 body:
   - type: markdown
     attributes:
