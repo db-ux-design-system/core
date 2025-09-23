@@ -1,6 +1,8 @@
 name: 'Community Contribution'
+description: Request a new component to be added to DB UX Design System.
+labels: ["👩‍👧‍👦community contribution"]
 title: '[Beitrag]: '
-labels: ['community-content', 'neu']
+
 body:
   - type: markdown
     attributes:
