@@ -11,12 +11,12 @@ body:
     id: component-name
     attributes:
       label: Component Name
-      placeholder: Insert the component name
+      placeholder: "Insert the component name"
   - type: textarea
     id: component-description
     attributes:
       label: Component Description
-      placeholder: Insert a short description of the component
+      placeholder: "Insert a short description of the component"
     validations:
       required: true
   - type: checkboxes
@@ -42,6 +42,7 @@ body:
     attributes:
       label: Playground Link(s)
       placeholder: "Hier den/die Playground-Link(s) des Nutzers einfügen."
+      
   - type: dropdown
     id: businessunit
     attributes:
