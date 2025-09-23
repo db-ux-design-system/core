@@ -1,37 +1,60 @@
----
 name: 'Community Contribution'
-title: '[Beitrag]: [Name des Contents hier eintragen]'
-labels: 'community-content, neu'
-
-
----
+title: '[Beitrag]: '
+labels: ['community-content', 'neu']
 body:
-
-### 👤 Eingereicht von
-
-- **E-Mail-Adresse:** *Hier die E-Mail des Nutzers einfügen*
-- **Github-Username:** *Hier den GitHub-Namen einfügen*
-- **Geschäftsfeld:** *Hier das Geschäftsfeld einfügen*
-
----
-
-### 📦 Details zum Beitrag
-
-**Content Name (Kurze Beschreibung):**
-> *Hier den Namen/die Beschreibung des Contents einfügen.*
-
-**Content Type:** (Zutreffendes ankreuzen)
-- [ ] Design (Figma)
-- [ ] Code (Playground)
-
----
-
-### 🔗 Links
-
-#### Figma Link(s)
-*Hinweis für den Einreichenden: Bitte achte darauf, dass die Datei-Freigabe auf View-Rechter für die Organisation "Deutsche Bahn" eingestellt ist.*
-> *Hier den/die Figma-Link(s) des Nutzers einfügen.*
-
-#### Playground Link(s)
-*Hinweis für den Einreichenden: Bitte sende uns deinen Code in Form eines Playground-Links.*
-> *Hier den/die Playground-Link(s) des Nutzers einfügen.*
+  - type: markdown
+    attributes:
+      value: "### 👤 Eingereicht von"
+  - type: input
+    id: email
+    attributes:
+      label: E-Mail-Adresse
+      placeholder: Hier die E-Mail des Nutzers einfügen
+  - type: input
+    id: github-user
+    attributes:
+      label: Github-Username
+      placeholder: Hier den GitHub-Namen einfügen
+  - type: input
+    id: business-field
+    attributes:
+      label: Geschäftsfeld
+      placeholder: Hier das Geschäftsfeld einfügen
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: markdown
+    attributes:
+      value: "### 📦 Details zum Beitrag"
+  - type: textarea
+    id: content-name
+    attributes:
+      label: Content Name (Kurze Beschreibung)
+      placeholder: Hier den Namen/die Beschreibung des Contents einfügen
+    validations:
+      required: true
+  - type: checkboxes
+    id: content-type
+    attributes:
+      label: Content Type
+      options:
+        - label: Design (Figma)
+        - label: Code (Playground)
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: markdown
+    attributes:
+      value: "### 🔗 Links"
+  - type: textarea
+    id: figma-links
+    attributes:
+      label: Figma Link(s)
+      description: "Hinweis für den Einreichenden: Bitte achte darauf, dass die Datei-Freigabe auf View-Rechter für die Organisation 'Deutsche Bahn' eingestellt ist."
+      placeholder: "Hier den/die Figma-Link(s) des Nutzers einfügen."
+  - type: textarea
+    id: playground-links
+    attributes:
+      label: Playground Link(s)
+      description: "Hinweis für den Einreichenden: Bitte sende uns deinen Code in Form eines Playground-Links."
+      placeholder: "Hier den/die Playground-Link(s) des Nutzers einfügen."
