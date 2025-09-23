@@ -1,50 +1,22 @@
-name: 'Community Contribution'
-description: Request a new component to be added to DB UX Design System.
+name: 'Contribution: Community Component'
+description: Contribute a new component to be added to Community Components / DB UX Design System.
 labels: ["👩‍👧‍👦community contribution"]
 title: '[Beitrag]: '
 
 body:
   - type: markdown
     attributes:
-      value: "### 👤 Eingereicht von"
-  - type: input
-    id: email
-    attributes:
-      label: E-Mail-Adresse
-      placeholder: Hier die E-Mail des Nutzers einfügen
-  - type: input
-    id: github-user
-    attributes:
-      label: Github-Username
-      placeholder: Hier den GitHub-Namen einfügen
-  - type: dropdown
-    id: businessunit
-    attributes:
-      label: Geschäftsfeld?
-      options:
-        - DB Systel GmbH 
-        - DB Fernverkehr AG
-        - DB Regio AG
-        - DB InfraGO AG
-        - DB Cargo AG
-        - DB Konzern
-        - DB Vertrieb GmbH
-        - DB Energie
-        - DB Connect
-        - andere
-    validations:
-      required: false
-  - type: markdown
-    attributes:
-      value: "---"
-  - type: markdown
-    attributes:
       value: "### 📦 Details zum Beitrag"
-  - type: textarea
-    id: content-name
+- type: input
+    id: component-name
     attributes:
-      label: Content Name (Kurze Beschreibung)
-      placeholder: Hier den Namen/die Beschreibung des Contents einfügen
+      label: Component Name
+      placeholder: Insert the component name
+  - type: textarea
+    id: component-description
+    attributes:
+      label: Component Description
+      placeholder: Insert a short description of the component
     validations:
       required: true
   - type: checkboxes
@@ -70,3 +42,20 @@ body:
     attributes:
       label: Playground Link(s)
       placeholder: "Hier den/die Playground-Link(s) des Nutzers einfügen."
+  - type: dropdown
+    id: businessunit
+    attributes:
+      label: Geschäftsfeld?
+      options:
+        - DB Systel GmbH 
+        - DB Fernverkehr AG
+        - DB Regio AG
+        - DB InfraGO AG
+        - DB Cargo AG
+        - DB Konzern
+        - DB Vertrieb GmbH
+        - DB Energie
+        - DB Connect
+        - andere
+    validations:
+      required: false
