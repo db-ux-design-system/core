@@ -17,11 +17,23 @@ body:
     attributes:
       label: Github-Username
       placeholder: Hier den GitHub-Namen einfügen
-  - type: input
-    id: business-field
+  - type: dropdown
+    id: businessunit
     attributes:
-      label: Geschäftsfeld
-      placeholder: Hier das Geschäftsfeld einfügen
+      label: Geschäftsfeld?
+      options:
+        - DB Systel GmbH 
+        - DB Fernverkehr AG
+        - DB Regio AG
+        - DB InfraGO AG
+        - DB Cargo AG
+        - DB Konzern
+        - DB Vertrieb GmbH
+        - DB Energie
+        - DB Connect
+        - andere
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: "---"
