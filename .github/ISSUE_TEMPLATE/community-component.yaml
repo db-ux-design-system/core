@@ -44,7 +44,9 @@ body:
       placeholder: "Insert Playground-Link(s)"
   - type: markdown
     attributes:
-      value: "---"
+      value: "
+      ---
+      "
   - type: markdown
     attributes:
       value: "### 📦 Additional information"
