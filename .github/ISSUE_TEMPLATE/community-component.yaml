@@ -4,23 +4,6 @@ labels: ["👩‍👧‍👦community contribution"]
 title: '[Beitrag]: '
 
 body:
-  - type: dropdown
-    id: businessunit
-    attributes:
-      label: Geschäftsfeld?
-      options:
-        - DB Systel GmbH 
-        - DB Fernverkehr AG
-        - DB Regio AG
-        - DB InfraGO AG
-        - DB Cargo AG
-        - DB Konzern
-        - DB Vertrieb GmbH
-        - DB Energie
-        - DB Connect
-        - andere
-    validations:
-      required: false
   - type: markdown
     attributes:
       value: "---"
@@ -57,3 +40,21 @@ body:
     attributes:
       label: Playground Link(s)
       placeholder: "Hier den/die Playground-Link(s) des Nutzers einfügen."
+
+  - type: dropdown
+    id: businessunit
+    attributes:
+      label: Geschäftsfeld?
+      options:
+        - DB Systel GmbH 
+        - DB Fernverkehr AG
+        - DB Regio AG
+        - DB InfraGO AG
+        - DB Cargo AG
+        - DB Konzern
+        - DB Vertrieb GmbH
+        - DB Energie
+        - DB Connect
+        - andere
+    validations:
+      required: false
