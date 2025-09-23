@@ -1,0 +1,36 @@
+---
+name: 'Community Contribution'
+title: '[Beitrag]: [Name des Contents hier eintragen]'
+labels: 'community-content, neu'
+assignees: ''
+
+---
+
+### 👤 Eingereicht von
+
+- **E-Mail-Adresse:** *Hier die E-Mail des Nutzers einfügen*
+- **Github-Username:** *Hier den GitHub-Namen einfügen*
+- **Geschäftsfeld:** *Hier das Geschäftsfeld einfügen*
+
+---
+
+### 📦 Details zum Beitrag
+
+**Content Name (Kurze Beschreibung):**
+> *Hier den Namen/die Beschreibung des Contents einfügen.*
+
+**Content Type:** (Zutreffendes ankreuzen)
+- [ ] Design (Figma)
+- [ ] Code (Playground)
+
+---
+
+### 🔗 Links
+
+#### Figma Link(s)
+*Hinweis für den Einreichenden: Bitte achte darauf, dass die Datei-Freigabe auf View-Rechter für die Organisation "Deutsche Bahn" eingestellt ist.*
+> *Hier den/die Figma-Link(s) des Nutzers einfügen.*
+
+#### Playground Link(s)
+*Hinweis für den Einreichenden: Bitte sende uns deinen Code in Form eines Playground-Links.*
+> *Hier den/die Playground-Link(s) des Nutzers einfügen.*
