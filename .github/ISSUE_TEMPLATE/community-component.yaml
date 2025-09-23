@@ -30,16 +30,25 @@ body:
   - type: markdown
     attributes:
       value: "### 🔗 Links"
+  - type: markdown
+    attributes:
+      value: "For Figma components, please use the following [template](https://www.figma.com/design/J68ecsDtSfB6hsfParlaeQ/Community-Component-Template?node-id=25-420&t=e1vUu9ZE7t0Ij4BZ-1) and save the file with view permissions for the Deutsche Bahn organization in the [DB UX DS - Community Components project](https://www.figma.com/files/1298536054217934978/project/457665083/DB-UX-DS---Community-Components?fuid=1090987523035283074)." 
   - type: textarea
     id: figma-links
     attributes:
       label: Figma Link(s)
-      placeholder: "Hier den/die Figma-Link(s) des Nutzers einfügen."
+      placeholder: "Insert Figma-Link(s)"
   - type: textarea
     id: playground-links
     attributes:
       label: Playground Link(s)
-      placeholder: "Hier den/die Playground-Link(s) des Nutzers einfügen."
+      placeholder: "Insert Playground-Link(s)"
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: markdown
+    attributes:
+      value: "### 📦 Additional information"
 
   - type: dropdown
     id: businessunit
