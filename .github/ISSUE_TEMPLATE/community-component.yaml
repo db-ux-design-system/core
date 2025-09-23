@@ -4,19 +4,6 @@ labels: ["👩‍👧‍👦community contribution"]
 title: '[Beitrag]: '
 
 body:
-  - type: markdown
-    attributes:
-      value: "### 👤 Eingereicht von"
-  - type: input
-    id: email
-    attributes:
-      label: E-Mail-Adresse
-      placeholder: Hier die E-Mail des Nutzers einfügen
-  - type: input
-    id: github-user
-    attributes:
-      label: Github-Username
-      placeholder: Hier den GitHub-Namen einfügen
   - type: dropdown
     id: businessunit
     attributes:
