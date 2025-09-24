@@ -11,10 +11,10 @@ body:
         
         📣 Please create a separate issue for each feature.
  
-        ⚠️ Bitte beachten:
-        - Keine personenbezogenen Daten teilen (z. B. Namen, E-Mail-Adressen, Kundendaten)
-        - Keine vertraulichen Unternehmensinformationen anhängen
-        - Keine vollflächigen Produktscreenshots hochladen
+        ⚠️ Please note:
+- Do not share any personal data (e.g., names, email addresses, customer data)
+- Do not attach any confidential company information
+- Do not upload full-screen product screenshots
   
   - type: textarea
     id: description
