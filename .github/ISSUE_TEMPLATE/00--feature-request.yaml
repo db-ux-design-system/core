@@ -12,9 +12,9 @@ body:
         📣 Please create a separate issue for each feature.
  
         ⚠️ Please note:
-- Do not share any personal data (e.g., names, email addresses, customer data)
-- Do not attach any confidential company information
-- Do not upload full-screen product screenshots
+        - Do not share any personal data (e.g., names, email addresses, customer data)
+        - Do not attach any confidential company information
+        - Do not upload full-screen product screenshots
   
   - type: textarea
     id: description
