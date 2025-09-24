@@ -12,9 +12,9 @@ body:
         Please make sure that you are using the latest version of the tool. The use of an older version can lead to errors in the components that no longer occur in the current version.
 
         ⚠️ Please note:
-- Do not share any personal data (e.g., names, email addresses, customer data)
-- Do not attach any confidential company information
-- Do not upload full-screen product screenshots
+        - Do not share any personal data (e.g., names, email addresses, customer data)
+        - Do not attach any confidential company information
+        - Do not upload full-screen product screenshots
  
   - type: checkboxes
     id: ds-library
