@@ -10,6 +10,11 @@ body:
         If you are reporting a bug or problem, please use the bug template instead.
         
         📣 Please create a separate issue for each feature.
+ 
+        ⚠️ Bitte beachten:
+        - Keine personenbezogenen Daten teilen (z. B. Namen, E-Mail-Adressen, Kundendaten)
+        - Keine vertraulichen Unternehmensinformationen anhängen
+        - Keine vollflächigen Produktscreenshots hochladen
   
   - type: textarea
     id: description
