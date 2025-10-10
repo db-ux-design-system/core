@@ -8,6 +8,12 @@ body:
         Thanks for taking the time to fill out this issue! Use this template if you want to request a new feature, or a change to an existing feature. If you are reporting a bug or problem, please use the bug template instead.
         
         📣 Please create a separate issue for each topic.
+
+        ⚠️ **Please keep in mind to use anonymous sample material:**
+        - **Do not share any personal data (e.g., names, email addresses, customer data)**
+        - **Do not attach any confidential company information**
+        - **Do not upload full-screen product screenshots**
+        - **Do not share internal URLs.**
   
   - type: textarea
     id: problem
