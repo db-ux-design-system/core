@@ -12,6 +12,7 @@ body:
         - **Do not upload full-screen product screenshots**
         - **Do not share internal URLs.**
         ---
+
   - type: markdown
     attributes:
       value: "### 📦 Details zum Beitrag"
