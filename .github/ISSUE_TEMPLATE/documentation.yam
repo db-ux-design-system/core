@@ -7,6 +7,12 @@ body:
       value: |
         Thanks for taking the time to fill out this issue! Feedback by the community has a very high value for us, to improve our work and to have every other user benefit from it as well. 🙂
   
+        ⚠️ **Please keep in mind to use anonymous sample material:**
+        - **Do not share any personal data (e.g., names, email addresses, customer data)**
+        - **Do not attach any confidential company information**
+        - **Do not upload full-screen product screenshots**
+        - **Do not share internal URLs.**
+
   - type: input
     id: link
     attributes:

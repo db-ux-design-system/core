@@ -5,7 +5,14 @@ labels: ["👩‍👧‍👦community contribution"]
 body:
   - type: markdown
     attributes:
-      value: "---"
+      value: |
+        ⚠️ **Please keep in mind to use anonymous sample material:**
+        - **Do not share any personal data (e.g., names, email addresses, customer data)**
+        - **Do not attach any confidential company information**
+        - **Do not upload full-screen product screenshots**
+        - **Do not share internal URLs.**
+        ---
+
   - type: markdown
     attributes:
       value: "### 📦 Details zum Beitrag"
