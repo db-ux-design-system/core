@@ -31,7 +31,8 @@ body:
       description: Give a clear and precise description of the goal of this epic.
       label: Goal
       placeholder: 
-      value: "This epic covers all tasks related to the conception, design development, implementation, documentation, quality assurance, and publication of the breadcrumb component for the DB UX design system. The goal is to create a consistent, accessible and documented component that is available to DS users in the production system."
+      value: This epic covers all tasks related to the conception, design development, implementation, documentation, quality assurance, and publication of the breadcrumb component for the DB UX design system. 
+      The goal is to create a consistent, accessible and documented component that is available to DS users in the production system.
     validations:
       required: true
 
