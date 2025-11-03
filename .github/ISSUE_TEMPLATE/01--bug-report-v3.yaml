@@ -62,7 +62,7 @@ body:
   - type: textarea
     id: screenshots
     attributes:
-      description: If applicable, add screenshots to help explain your problem or give our design system test account access to your Figma file 👉 db-ux-designsystem@deutschebahn.com
+      description: If applicable, add screenshots to help explain your problem 💌 or give our design system test account access to your Figma file 👉 db-ux-designsystem@deutschebahn.com
       label: Screenshots
       placeholder: Screenshots often help us to better understand the problem.
 
