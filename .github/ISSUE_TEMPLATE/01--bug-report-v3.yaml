@@ -9,7 +9,7 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report! 
-        Use this template for [**Code bugs**](https://github.com/db-ux-design-system/core-web/issues/new?template=bug_report.yaml)
+        Use [this template in **core-web**](https://github.com/db-ux-design-system/core-web/issues/new?template=bug_report.yaml) for **Code bugs**
         Please make sure that you are using the **latest version of the tool**. The use of an older version can lead to errors in the components that no longer occur in the current version.
 
         ⚠️ **Please keep in mind to use anonymous sample material:**
