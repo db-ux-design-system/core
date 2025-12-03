@@ -22,16 +22,14 @@ body:
   - type: checkboxes
     id: ds-library
     attributes:
-      label: Which design system content is impacted? * (PLEASE SELECT THE LIBRARY)
+      label: Which design system content is impacted? * (please select the Figma library)
       description: Select all the ones that apply, to the best of your knowledge.
       options:
-        - label: Figma Core Foundations
-        - label: Figma Core Components
-        - label: Figma Core Patterns
-        - label: Figma DB Theme Icons (functional, illustrative)
-        - label: Figma 🧪 Core Lab
-        - label: Sketch Core (Foundations/Components/Patterns)
-        - label: Sketch Core Icons
+        - label: Core Foundations
+        - label: Core Components
+        - label: Core Patterns
+        - label: 🧪 Core Lab
+        - label: DB Theme Icons (functional, illustrative)
         - label: Documentation
 
   - type: input
