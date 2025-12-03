@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ❗️ Use [this template in **core-web**](https://github.com/db-ux-design-system/core-web/issues/new?template=bug_report.yaml) for **💻 Code bugs**
+        ❗️ For **💻 code bugs** please use [this template in the **core-web**](https://github.com/db-ux-design-system/core-web/issues/new?template=bug_report.yaml) repo.
         
         Thanks for taking the time to fill out this bug report! 
         Please make sure that you are using the **latest version of the tool**. The use of an older version can lead to errors in the components that no longer occur in the current version.
