@@ -22,10 +22,9 @@ body:
       label: Which Figma plugin is this about? *
       description: Please select the plugin you want to give feedback on.
       options:
-        - DB Renaming
+        - DB Logo Importer
         - DB Icon Studio
         - DB Custom Color Importer
-        - DB Logo Importer
     validations:
       required: true
 
