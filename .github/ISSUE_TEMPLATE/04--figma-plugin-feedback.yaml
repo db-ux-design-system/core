@@ -1,0 +1,108 @@
+name: 🎨 Figma Plugin Feedback
+description: Report a bug or request a feature for one of our Figma plugins
+labels: ["👩‍👧‍👦community feedback", "figma-plugin"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to provide feedback on our Figma plugins! 
+        Please make sure that you are using the **latest version of the plugin**. The use of an older version can lead to errors that no longer occur in the current version.
+
+        ⚠️ **Please keep in mind to use anonymous sample material:**
+        - **Do not share any personal data (e.g., names, email addresses, customer data)**
+        - **Do not attach any confidential company information**
+        - **Do not upload full-screen product screenshots**
+        - **Do not share internal URLs.**
+
+  - type: dropdown
+    id: plugin
+    attributes:
+      label: Which Figma plugin is this about? *
+      description: Please select the plugin you want to give feedback on.
+      options:
+        - DB Renaming
+        - DB Icon Studio
+        - DB Custom Color Importer
+        - DB Logo Importer
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: What type of feedback is this? *
+      description: Please select whether you want to report a bug or request a feature.
+      options:
+        - 🐞 Bug Report
+        - ✨ Feature Request
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description *
+      description: |
+        **For bugs:** Describe what happened and how we can reproduce the issue.
+        **For features:** Give a clear description of the feature you'd like to see. Include examples if possible.
+      placeholder: Please describe your feedback in detail...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behaviour
+    attributes:
+      label: Expected behavior (for bugs)
+      description: If you're reporting a bug, what did you expect to happen instead?
+      placeholder: What should have happened?
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or videos
+      description: Add screenshots or videos to help explain your feedback 💌
+      placeholder: Visual materials often help us to better understand the issue or request.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_information
+    attributes:
+      label: Additional context
+      description: Add any other context about your feedback here.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: businessunit
+    attributes:
+      label: Which DB business unit do you work for?
+      options:
+        - DB Systel GmbH (please name your customer below)
+        - DB Fernverkehr AG
+        - DB Regio AG
+        - DB InfraGO AG
+        - DB Cargo AG
+        - DB Konzern
+        - DB Vertrieb GmbH
+        - DB Energie
+        - DB Connect
+        - other (please specify below)
+    validations:
+      required: false
+
+  - type: input
+    id: businessunit2
+    attributes:
+      label: "DB Systel" please enter your customer / "other" please enter your area or business unit.
+    validations:
+      required: false
+
+  - type: input
+    id: project
+    attributes:
+      label: What project are you working on?
+    validations:
+      required: false
