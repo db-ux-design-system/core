@@ -31,12 +31,13 @@ body:
         - label: 🧪 Core Lab
         - label: DB Theme Icons (functional, illustrative)
         - label: Documentation
+        - label: Figma Plugin (please name the plugin below)
 
   - type: input
     id: ds-version
     attributes:
-      label: Which version is impacted?
-      description: Please let us know which version number is affected.
+      label: Which version or content is impacted?
+      description: Please let us know which version or content is affected.
       placeholder: ex. 3.0.0-Beta-1 or 3.0.13
     validations:
       required: false
