@@ -4,7 +4,23 @@ inclusion: auto
 
 # DB UX Design System – Figma Library Conventions (Core Components)
 
+> **Status:** 🧪 Concept — used by DB UX Design Team, iterating on rules. Not yet packaged as a Power.
+
 This skill describes the naming patterns, property conventions, and structural rules for maintaining and extending the DB UX Design System Core Components Figma Library (v3). It works hand-in-hand with the DB UX MCP server.
+
+## Related Skills
+
+| Task | Skill |
+|------|-------|
+| Create/fill Component.Overview documentation frames | `db-ux-component-overview` |
+| Organize page layout (position Sections, sort, spacing) | `db-ux-component-page-layout` |
+| Review library/component quality (spacing, colors, naming) | `db-ux-design-review` |
+
+**When to use which:**
+- Building a new component or adding variants → start with this skill (conventions)
+- Done building → run `db-ux-component-overview` to create documentation
+- After overview → run `db-ux-component-page-layout` to clean up the page
+- Before publishing → run `db-ux-design-review` to validate quality
 
 ## Source Library
 
@@ -43,6 +59,14 @@ Subcomponents are prefixed with `↳` and use UPPERCASE for the subcomponent's r
 ↳ Parent → SUBCOMPONENT ROLE (Maturity)
 ```
 
+**Description rule:** The Figma description of a subcomponent must always start with the warning line:
+
+```
+⚠️ Only use the subcomponent within the main component!
+```
+
+Any additional description text follows after this line.
+
 **Examples:**
 
 - `↳ Control Panel → BRAND`
@@ -56,6 +80,14 @@ Helper components that are only used internally (not published) are prefixed wit
 ```
 .HelperName
 ```
+
+**Description rule:** The Figma description of a helper component must always start with the warning line:
+
+```
+⚠️ Only use the helpercomponent within the main component!
+```
+
+Any additional description text follows after this line.
 
 **Examples:**
 
@@ -98,25 +130,27 @@ Boolean properties typically start with a verb or adjective:
 
 Properties are prefixed with emoji icons to indicate their type and purpose:
 
-| Icon | Purpose                                | Example                |
-| ---- | -------------------------------------- | ---------------------- |
-| 👁️   | Show/Hide boolean (toggles visibility) | `👁️ Show Label`        |
-| 🔀   | Variant selection                      | `🔀 Variant`           |
-| 📦   | Slot (content area)                    | `📦 Children`          |
-| 🔄   | Icon swap (instance swap for icons)    | `🔄 Icon`              |
-| ✏️   | Text override                          | `✏️ Label`             |
-| 🎨   | Design-only property (not in code)     | `🎨 Interaction State` |
+| Icon | Purpose                               | Example         |
+| ---- | ------------------------------------- | --------------- |
+| 👁️   | Show/Hide toggle (toggles visibility) | `👁️ Show Label` |
+| 🔀   | Variant selection                     | `🔀 Variant`    |
+| 📦   | Slot (content area)                   | `📦 Children`   |
+| 🔄   | Icon swap (instance swap for icons)   | `🔄 Icon`       |
+| ✏️   | Text override                         | `✏️ Label`      |
 
-> **Note:** The `💻` dev-only property prefix is **deprecated** and no longer used. Properties that were previously dev-only are now either:
+> **Note:** The `🎨` design-only prefix and `💻` dev-only prefix are **deprecated** and no longer used. Since Code Connect handles the mapping between design properties and code props, all properties are now named purely from a design perspective:
 >
-> - Visible on the component's first level (if configurable by the user), or
-> - Integrated invisibly as Code Connect properties inside the `.⚙️ Code Connect` helper (if not user-configurable).
->
-> See: [Code Connect documentation](https://design-system.deutschebahn.com/documentation/learn/code-connect/)
+> - Variants always use `🔀` (including Interaction State)
+> - Show/Hide toggles always use `👁️` (even if technically implemented as a Variant with True/False values)
+> - Show/Hide properties should be placed directly above the property they control (e.g. `👁️ Show Children Slot` directly above `📦 Children`)
+> - Instance swaps always use `🔄`
+> - Slots always use `📦`
+> - Text overrides always use `✏️`
 
 ### 2.3 Default Values
 
 - Default values are always prefixed with `(Def)`: `(Def) Enabled`, `(Def) False`, `(Def) Medium`
+- The `(Def)` value must always be listed **first** in the property's value list. Example: `(Def) Top, Bottom` – not `Bottom, (Def) Top`.
 - The default variant is positioned first (top-left) in the variant matrix.
 
 ### 2.4 Code Connect Helper Components
@@ -125,9 +159,23 @@ Each component contains a hidden `.⚙️ Code Connect` instance that stores met
 
 **Size:** Always `0 × 0` px (effectively invisible).
 
-**Placement:** Always the **first child** of the component's root frame, **absolutely positioned** (not part of the Auto Layout flow).
+**Placement:** Always the **first child** of the component's root frame, **absolutely positioned** (not part of the Auto Layout flow), **locked** (`locked: true`).
 
 **Content per component:** Contains Code Connect metadata mapping Figma properties to framework component props. This enables the DB UX MCP server to resolve component usage from Figma nodes.
+
+### 2.5 FloatingContainer
+
+Interactive components (e.g. Button, Icon Button) include a `FloatingContainer` instance for floating UI elements (tooltips, popovers, badges).
+
+**Placement:** Always the **second child** (index 1, directly after `.⚙️ Code Connect`), **absolutely positioned**. In exceptional cases (e.g. complex components with multiple nested containers), the FloatingContainer may also be placed inside a Frame directly below Code Connect rather than at the component root.
+
+**Setup rules:**
+
+- Constraints: `STRETCH` horizontal + `STRETCH` vertical (Left & Right, Top & Bottom)
+- `visible: false` by default, bound to a `👁️ Show FloatingContainer` boolean property
+- **Locked** (`locked: true`) — prevents accidental selection/movement by users
+- Resized to match the variant's dimensions
+- The `↳ FloatingItem` inside the slot should be set to `Position=top-start, Edge=center` (unless the component requires a different placement)
 
 ---
 
@@ -148,6 +196,7 @@ All components use Auto Layout exclusively. Key rules:
 ```
 Component (Symbol/Variant)
 ├── .⚙️ Code Connect              ← Hidden metadata (0×0, first child)
+├── FloatingContainer              ← Absolutely positioned, STRETCH constraints, hidden + locked
 ├── Container                      ← Main Auto Layout frame
 │   ├── [Element] Container        ← Semantic container (e.g. "Checkbox Container")
 │   │   └── Icon Container         ← If element has an icon
@@ -195,6 +244,18 @@ Slots are hidden frames that serve as insertion points for additional content in
 - Slots are **not always hidden**. When they are hidden by default, there is a corresponding `👁️ Show ...` boolean property to toggle their visibility.
 - The legacy `.Slot` helper component (prefixed with `.`) predates Figma's native slots and is being **phased out** step by step.
 
+**Restricted slots (preferred instances):**
+
+When a slot has "Only allow preferred instances" enabled (i.e. only specific components are valid), the slot's description must include a hint line:
+
+```
+💡 Only accepts **[Component Name]**
+```
+
+- The component name must be **bold**.
+- The "Only accepts" line is always the **first line** in the description. If there is additional description text, it follows after.
+- Use the `↳` prefix for subcomponents (e.g. `💡 Only accepts ↳**ControlPanel -> Brand**`).
+
 **Slot naming direction (upcoming):**
 
 - `Children` will primarily be used in **container components** (e.g. Card, Shell) or **new components** where the slot represents the main content area.
@@ -239,12 +300,13 @@ Y-axis: Component State × Validation → e.g. Unchecked | Checked | Indetermina
 
 ## 5. Component Page Structure
 
+> For detailed page layout rules (positioning, spacing, Section organization), see the `db-ux-component-page-layout` skill.
+
 Each component page contains:
 
-### Sections
-
-- **Size-based sections**: `(Def) Medium`, `Small` etc., each containing variant frames.
-- **Variant frames**: Named `Component → Size - Width Variant`, containing the full state matrix.
+- **Component.Overview instances** — documentation frames (see `db-ux-component-overview` skill)
+- **Sections** — grouping Component Sets by variant/direction/maturity
+- **Component Sets** — containing the variant matrices
 
 ### Variant Frame Layout
 
