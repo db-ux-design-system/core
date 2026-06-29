@@ -188,6 +188,7 @@ All components use Auto Layout exclusively. Key rules:
 - **Root frame**: Auto Layout with the component's primary stacking direction.
 - **Nested containers**: Each semantic group (icon, label, actions) gets its own Auto Layout frame.
 - **Spacing**: Always uses DB Design Tokens via variables – never hard-coded values.
+- **Variable Source**: All variables (spacing, colors, typography, etc.) come from the **Core Foundation Library** (`@db-ux/core-foundations`). The Core Components Library does **not** define its own variables — it only consumes them. Exceptions (local variables in the Components Library) are rare and must be explicitly confirmed during review.
 - **Canvas stacking** is set to **"First on top"** (default). This means the first child in the layer list renders on top visually. Used for overlapping elements (Focus rings, tooltips, popovers) where children need to visually overlap without affecting layout flow.
 - **Resizing behavior**: Components are set to `Hug contents` by default. Full-width variants use `Fill container`.
 

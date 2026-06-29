@@ -140,12 +140,13 @@ Same structure as Properties but for SLOT-type properties. Uses a **visual repre
 
 | Rule | Details |
 |------|---------|
-| Outline | All component-level slots get a 1px stroke in `#ff00bf` |
-| Inactive slot background | `#F8EEF3` (light pink) |
-| Active slot background | `#FFBADD` (dark pink) — the slot being documented |
-| Hidden slots | Must be made visible (`slot.visible = true`) for the visualization |
+| Color | `#EE41B9` — used for both stroke and fill |
+| Outline | All component-level slots get a **1px stroke** in `#EE41B9` (full opacity) |
+| Inactive slot fill | `#EE41B9` at **10% opacity** — all slots that are NOT the one being documented |
+| Active slot fill | `#EE41B9` at **30% opacity** — the slot currently being documented/highlighted |
+| Hidden slots | Must be made visible (`slot.visible = true`) for the visualization. Use boolean properties like `👁️ Show Start Slot` to reveal hidden slots. |
 | Nested instance slots | Must be hidden (`slot.visible = false`) — only show slots that belong directly to the component, not slots inside nested instances |
-| Empty slots | Add a "Slot Filler" frame (24×24px based on `icon-size-md`, no fill) **only if the slot has no content**. If the slot already contains children, skip the filler — only apply the color styling (fills + strokes). Large slots are typically `fill`, so a small filler is sufficient; only for `hug`-sized slots does the filler determine the visual size. |
+| Empty slots | **All slots must be filled** in the Slots Section visualization. If a slot has no content, add a "Slot Filler" frame (24×24px based on `icon-size-md`, **no fill, no stroke, but `visible: true`**) to ensure the slot is rendered in the layout. "Invisible" here means the filler has no visual appearance (no fill, no stroke) — it must **NOT** be hidden (`visible: false`). If the slot already contains children, skip the filler — only apply the color styling (fills + strokes). Large slots are typically `fill`, so a small filler is sufficient; only for `hug`-sized slots does the filler determine the visual size. The key rule: **every slot must contain at least one visible child element** (either real content or a no-fill/no-stroke filler) so that all slots are visually represented in the overview. |
 | One PV per slot | Each `Overview.Property.Value` shows the component with ONE slot highlighted as active, others as inactive |
 | Value label always visible | The `Value` text node in each `Overview.Property.Value` must remain **visible** and contain the slot name (e.g. "Children", "Start Slot"). Only the OCC title is hidden, not the PV labels. |
 

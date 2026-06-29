@@ -82,6 +82,7 @@ Scan all FRAME, SLOT, and COMPONENT nodes (skip INSTANCE children).
 | Untokenized padding | `paddingTop/Bottom/Left/Right > 0` without corresponding `boundVariables` → should be 0 or token-bound |
 | Untokenized corner radius | `topLeftRadius > 0` (etc.) without `boundVariables` → should be token-bound |
 | Untokenized stroke width | `strokeTopWeight > 0` without `boundVariables` → should be token-bound |
+| Local variables | Variables bound to nodes should come from the **Core Foundation Library**, not be locally defined. Flag any local variable usage — these are exceptions that must be explicitly confirmed. |
 
 ### B2. Colors & Fills
 
