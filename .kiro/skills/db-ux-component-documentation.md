@@ -142,7 +142,7 @@ Each guideline referenced in the content has **two companion pages** — one for
 
 ```
 Page: "Guideline: [Topic] (do)" or "Guideline: [Topic] (dont)"
-└── Container (Frame, 480×270)
+└── Container (Frame, 320x180)
     └── [Image / Component Instance / Screenshot]
 ```
 
