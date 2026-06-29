@@ -151,7 +151,7 @@ Page: "Guideline: [Topic] (do)" or "Guideline: [Topic] (dont)"
 | Property | Value |
 |----------|-------|
 | Name | `Container` |
-| Size | **480 × 270 px** (fixed) |
+| Size | **320 × 180 px** (fixed) |
 | Aspect Ratio | **Locked** (16:9) |
 | Clip Content | **Enabled** |
 | Auto Layout | ✅ Enabled |
