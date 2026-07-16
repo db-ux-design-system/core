@@ -10,14 +10,12 @@ This skill describes the naming patterns, property conventions, and structural r
 | Create/fill Component.Overview documentation frames | `db-ux-component-overview` |
 | Organize page layout (position Sections, sort, spacing) | `db-ux-component-page-layout` |
 | Review library/component quality (spacing, colors, naming) | `db-ux-design-review` |
-| Create/maintain platform documentation (Figma Doku files) | `db-ux-component-documentation` |
 
 **When to use which:**
 - Building a new component or adding variants → start with this skill (conventions)
 - Done building → run `db-ux-component-overview` to create documentation
 - After overview → run `db-ux-component-page-layout` to clean up the page
 - Before publishing → run `db-ux-design-review` to validate quality
-- Writing platform docs (guidelines, descriptions) → run `db-ux-component-documentation`
 
 ## Source Library
 
