@@ -1,24 +1,24 @@
 # DB UX Design System – Component Overview Generator
 
 
-This skill helps fill out the `Component.Overview` template for a component in the DB UX Core Components Figma library.
+Dieses Steering hilft beim Ausfüllen der `Component.Overview`-Vorlage für eine Komponente in der DB UX Core Components Figma-Library.
 
-## Overview
+## Überblick
 
-The `Component.Overview` is a standardized documentation frame placed on each component's Figma page. It uses a template from the "DB UX DS - Visuals Internal" library and documents the component's properties, slots, anatomy, and usage examples.
+Die `Component.Overview` ist ein standardisierter Dokumentationsframe, der auf jeder Komponentenseite in Figma platziert wird. Er basiert auf einer Vorlage aus der "DB UX DS - Visuals Internal"-Library und dokumentiert Properties, Slots, Anatomie und Anwendungsbeispiele der Komponente.
 
-## Template Source
+## Vorlagenquelle
 
 - **Library:** DB UX DS - Visuals Internal
-- **Component:** `Component.Overview`
+- **Komponente:** `Component.Overview`
 - **Component Key (Variant=Component):** `7692e799fe3fc67bebb8b636d7eec01496dd8a9a`
 - **Component Set Key:** `4533ee748c9c84c93c463a341ccb06e43ea8c094`
-- **Template File:** https://www.figma.com/design/ssdghRkxRSFrY2AZJgPURn/Template-Component-Overview
-- **Helper Components:** `Overview.Content.Container`, `Overview.Property.Value`
+- **Vorlagen-Datei:** https://www.figma.com/design/ssdghRkxRSFrY2AZJgPURn/Template-Component-Overview
+- **Hilfskomponenten:** `Overview.Content.Container`, `Overview.Property.Value`
 - **Overview.Content.Container Key:** `e3f5cfec4677892a5bc0dd8637fea60a45c83324`
 - **Overview.Property.Value Key:** `daca96f1be19e01930451819b71eb7332fa302d1`
 
-### How to Insert Programmatically
+### Programmatisches Einfügen
 
 ```js
 const component = await figma.importComponentByKeyAsync("7692e799fe3fc67bebb8b636d7eec01496dd8a9a");
@@ -27,144 +27,143 @@ instance.x = 0;
 instance.y = 0;
 ```
 
-## Placement Rules
+## Platzierungsregeln
 
-- Overview is placed at position **0/0** on the component's page
-- Subcomponent Overview (if needed) is placed **directly to the right** of the main Overview
-- Component Sets start at **x = last Overview right edge + 100**, top-aligned at **y = 0**
-- After all Overviews are placed, move existing Component Sets and Sections to the right of the Overviews, preserving their original relative order and layout
+- Die Overview wird an Position **0/0** auf der Komponentenseite platziert
+- Eine Subcomponent Overview (falls nötig) wird **direkt rechts** neben der Haupt-Overview platziert
+- Component Sets beginnen bei **x = rechte Kante der letzten Overview + 100**, oben ausgerichtet bei **y = 0**
+- Nachdem alle Overviews platziert sind, werden bestehende Component Sets und Sections rechts daneben verschoben — dabei bleibt ihre ursprüngliche relative Anordnung und ihr Layout erhalten
 
-## Template Sections
+## Vorlagen-Abschnitte
 
 ### Header
 
-| Field | Source | How to fill |
-|-------|--------|-------------|
-| Component Name | Text node `"Component Name"` | Set to component name (e.g. "Drawer") |
-| State Badge | Instance `"State"` | Set variant property `"State"` to: "Stable", "Beta", "Concept", or "Pre-Release" on the State instance. This is a Variant property on the nested instance — select the State instance and change the variant in the properties panel. |
-| Link 1 | Instance `"Link → External"` | Documentation URL: `https://design-system.deutschebahn.com/documentation/components/{component-name}`. Derive the `{component-name}` from the page name: lowercase, remove spaces, parentheses, and status suffixes like "(Beta)". E.g. "ControlPanel (Beta)" → `controlpanel`, "Drawer" → `drawer`. |
-| Link 2 | Instance `"Link → External"` | "Submit Feedback" link (can be left as-is or set to GitHub issues) |
-| Notification | Hidden by default | Show only if there's an important usage note |
+| Feld | Quelle | Ausfüllen |
+|------|--------|-----------|
+| Component Name | Text-Node `"Component Name"` | Komponentenname eintragen (z. B. "Drawer") |
+| State Badge | Instanz `"State"` | Variant-Property `"State"` auf der State-Instanz setzen: "Stable", "Beta", "Concept" oder "Pre-Release". Dies ist eine Variant-Property auf der verschachtelten Instanz — die State-Instanz auswählen und im Properties-Panel die Variante ändern. |
+| Link 1 | Instanz `"Link → External"` | Dokumentations-URL: `https://design-system.deutschebahn.com/documentation/components/{component-name}`. Der `{component-name}` wird vom Seitennamen abgeleitet: Kleinbuchstaben, Leerzeichen, Klammern und Status-Suffixe wie "(Beta)" entfernen. Z. B. "ControlPanel (Beta)" → `controlpanel`, "Drawer" → `drawer`. |
+| Link 2 | Instanz `"Link → External"` | "Submit Feedback"-Link (kann so bleiben oder auf GitHub Issues verweisen) |
+| Notification | Standardmäßig ausgeblendet | Nur anzeigen, wenn ein wichtiger Nutzungshinweis existiert |
 
 ### Preview (👁️ Preview)
 
-Two rows showing the component in light and dark mode:
-- **Slot Light**: Place representative component instances in default/common states
-- **Slot Dark**: Same instances but rendered in dark mode context
+Zwei Reihen, die die Komponente im Light- und Darkmode zeigen:
+- **Slot Light**: Repräsentative Komponenteninstanzen im Standard-/häufigsten Zustand platzieren
+- **Slot Dark**: Dieselben Instanzen im Dark-Mode-Kontext
 
-**Automation:** The Preview can be auto-generated by placing the default variant instance (or one instance per Component Set if multi-set) in both the Light and Dark slots. For multi-set components, show one representative instance per direction/variant.
+**Automatisierung:** Die Preview kann automatisch generiert werden, indem die Default-Variante (oder je eine Instanz pro Component Set bei Multi-Set-Komponenten) in beide Slots (Light und Dark) gesetzt wird. Bei Multi-Set-Komponenten wird eine repräsentative Instanz pro Richtung/Variante angezeigt.
 
 ### Anatomy (📐 Anatomy)
 
-Manual section — shows the visual breakdown of the component with labeled parts. Purpose: allow developers in Dev Mode to identify all structural elements and extract the necessary tokens (spacing, colors, typography).
+Manueller Abschnitt — zeigt den visuellen Aufbau der Komponente mit beschrifteten Bestandteilen. Zweck: Entwickler im Dev Mode können alle strukturellen Elemente identifizieren und die nötigen Tokens (Abstände, Farben, Typografie) extrahieren.
 
-**Not automated** — complexity varies per component. Boolean/Variant combinations can make a fully automated anatomy impractical. Create manually based on the component's structure.
+**Nicht automatisierbar** — die Komplexität variiert je nach Komponente. Boolean-/Variant-Kombinationen machen eine vollständige Automatisierung unpraktikabel. Manuell auf Basis der Komponentenstruktur erstellen.
 
-Use `Overview.Content.Container` instances with component instances and annotations.
+`Overview.Content.Container`-Instanzen mit Komponenteninstanzen und Annotationen verwenden.
 
 ### Properties (🛠️ Properties)
 
-This is the main section to automate. Structure:
+Dies ist der Hauptabschnitt für die Automatisierung. Struktur:
 
 ```
 Property Container
-└── Contents Properties (slot)
-    ├── Overview.Content.Container  ← one per property
-    │   ├── Title (text)            ← property name (e.g. "🔀 Container Size")
+└── Contents Properties (Slot)
+    ├── Overview.Content.Container  ← einer pro Property
+    │   ├── Title (Text)            ← Property-Name (z. B. "🔀 Container Size")
     │   └── Content Slot
-    │       ├── Overview.Property.Value  ← one per value
-    │       │   ├── Value (text)         ← value name (e.g. "(Def) Small")
-    │       │   └── Value Slot           ← component instance showing that value
+    │       ├── Overview.Property.Value  ← einer pro Wert
+    │       │   ├── Value (Text)         ← Wertname (z. B. "(Def) Small")
+    │       │   └── Value Slot           ← Komponenteninstanz mit diesem Wert
     │       ├── Overview.Property.Value
-    │       │   ├── Value (text)         ← "Medium"
-    │       │   └── Value Slot           ← instance with Medium applied
+    │       │   ├── Value (Text)         ← "Medium"
+    │       │   └── Value Slot           ← Instanz mit Medium angewendet
     │       └── ...
-    ├── Overview.Content.Container  ← next property
+    ├── Overview.Content.Container  ← nächste Property
     │   └── ...
     └── ...
 ```
 
-**How to determine properties:**
+**Ermittlung der Properties:**
 
-1. Read `componentPropertyDefinitions` from the component set
-2. Group by type:
-   - `VARIANT` properties → show each variant option as a separate `Overview.Property.Value` with a component instance in that state
-   - `BOOLEAN` (👁️) properties → show True/False states as two `Overview.Property.Value` entries
-3. Skip internal/hidden properties (those starting with `.⚙️`)
-4. Check for **Code Connect properties** (see below)
+1. `componentPropertyDefinitions` des Component Sets auslesen
+2. Nach Typ gruppieren:
+   - `VARIANT`-Properties → jede Variant-Option als eigener `Overview.Property.Value` mit einer Komponenteninstanz im entsprechenden Zustand
+   - `BOOLEAN` (👁️)-Properties → True/False-Zustände als zwei `Overview.Property.Value`-Einträge
+3. Interne/versteckte Properties (die mit `.⚙️` beginnen) überspringen
+4. Auf **Code Connect Properties** prüfen (siehe unten)
 
 ### Code Connect Properties (⚙️)
 
-If a component contains a `.⚙️ Code Connect` instance whose properties are **exposed up to the component level** (i.e. visible and settable by the designer on the first level of the properties panel), these must also be documented in the Properties section.
+Wenn eine Komponente eine `.⚙️ Code Connect`-Instanz enthält, deren Properties **auf Komponentenebene exponiert** sind (d. h. im Properties-Panel auf der ersten Ebene sichtbar und vom Designer einstellbar), müssen diese ebenfalls im Properties-Abschnitt dokumentiert werden.
 
-**How to identify Code Connect properties:**
+**Identifikation von Code Connect Properties:**
 
-1. Look at the component set's `componentPropertyDefinitions`
-2. Properties prefixed with `⚙️` (e.g. `⚙️ Direction`, `⚙️ Position`, `⚙️ Emphasis`) that are exposed (not inside `.⚙️` — note the dot prefix means hidden) are Code Connect properties
-3. These are typically VARIANT or BOOLEAN properties on the `.⚙️ Code Connect` nested instance that have been exposed to the top component level via Figma's "Expose from nested instance" feature
+1. Die `componentPropertyDefinitions` des Component Sets prüfen
+2. Properties mit `⚙️`-Präfix (z. B. `⚙️ Direction`, `⚙️ Position`, `⚙️ Emphasis`), die exponiert sind (nicht innerhalb von `.⚙️` — der Punkt-Präfix bedeutet versteckt), sind Code Connect Properties
+3. Es handelt sich typischerweise um VARIANT- oder BOOLEAN-Properties auf der verschachtelten `.⚙️ Code Connect`-Instanz, die über Figmas "Expose from nested instance"-Funktion auf Komponentenebene sichtbar gemacht wurden
 
-**How to display them:**
+**Darstellung:**
 
-- Use the same `Overview.Content.Container` → `Overview.Property.Value` structure as for design properties
-- Title: The property name including the ⚙️ prefix (e.g. `⚙️ Direction`)
-- Values: List all possible values as text in the `Overview.Property.Value` entries
-- Value Slot: **No component instance needed** — only show the text value. Code Connect properties are code-only metadata, so a visual instance would not look different. Use a simple text node showing the value name instead.
-- Alternatively, if the property does visibly change the component appearance, show instances like regular variant properties
+- Dieselbe Struktur wie bei Design-Properties: `Overview.Content.Container` → `Overview.Property.Value`
+- Titel: Property-Name inklusive `⚙️`-Präfix (z. B. `⚙️ Direction`)
+- Werte: Alle möglichen Werte als Text in den `Overview.Property.Value`-Einträgen auflisten
+- Value Slot: **Keine Komponenteninstanz nötig** — nur den Textwert anzeigen. Code Connect Properties sind reine Code-Metadaten, eine visuelle Instanz würde keinen Unterschied zeigen. Stattdessen einen einfachen Text-Node mit dem Wertnamen verwenden.
+- Alternative: Wenn die Property das Erscheinungsbild der Komponente sichtbar verändert, Instanzen wie bei regulären Variant-Properties zeigen
 
-**Distinction in the Overview header:**
+**Unterscheidung im Overview-Header:**
 
-The Properties section header already includes two labels:
-- `🎨 design property` — for standard variant/boolean properties
-- `⚙️ code connect property` — for Code Connect properties
+Der Properties-Abschnitt enthält ein Label im Header:
+- `⚙️ code connect property` — für Code Connect Properties
 
-This helps designers understand which properties affect the visual (🎨) vs. the code output (⚙️).
+So erkennen Designer, welche Properties die Code-Ausgabe (⚙️) beeinflussen.
 
-**Example (Tooltip):**
+**Beispiel (Tooltip):**
 
-| Property | Type | Values |
-|----------|------|--------|
+| Property | Typ | Werte |
+|----------|-----|-------|
 | ⚙️ Direction | Code Connect | Bottom, Top, Left, Right |
 | ⚙️ Emphasis | Code Connect | Weak, Strong |
 | ⚙️ Width | Code Connect | Auto, Fixed |
 
 ### Slots (🔄 Slots)
 
-Same structure as Properties but for SLOT-type properties. Uses a **visual representation** showing the component with slots highlighted in color:
+Gleiche Struktur wie Properties, aber für SLOT-Properties. Verwendet eine **visuelle Darstellung**, die die Komponente mit farblich hervorgehobenen Slots zeigt:
 
-**Slot Visualization Rules:**
+**Regeln für die Slot-Visualisierung:**
 
-| Rule | Details |
-|------|---------|
-| Color | `#EE41B9` — used for both stroke and fill |
-| Outline | All component-level slots get a **1px stroke** in `#EE41B9` (full opacity) |
-| Inactive slot fill | `#EE41B9` at **10% opacity** — all slots that are NOT the one being documented |
-| Active slot fill | `#EE41B9` at **30% opacity** — the slot currently being documented/highlighted |
-| Hidden slots | Must be made visible (`slot.visible = true`) for the visualization. Use boolean properties like `👁️ Show Start Slot` to reveal hidden slots. |
-| Nested instance slots | Must be hidden (`slot.visible = false`) — only show slots that belong directly to the component, not slots inside nested instances |
-| Empty slots | **All slots must be filled** in the Slots Section visualization. If a slot has no content, add a "Slot Filler" frame (24×24px based on `icon-size-md`, **no fill, no stroke, but `visible: true`**) to ensure the slot is rendered in the layout. "Invisible" here means the filler has no visual appearance (no fill, no stroke) — it must **NOT** be hidden (`visible: false`). If the slot already contains children, skip the filler — only apply the color styling (fills + strokes). Large slots are typically `fill`, so a small filler is sufficient; only for `hug`-sized slots does the filler determine the visual size. The key rule: **every slot must contain at least one visible child element** (either real content or a no-fill/no-stroke filler) so that all slots are visually represented in the overview. |
-| One PV per slot | Each `Overview.Property.Value` shows the component with ONE slot highlighted as active, others as inactive |
-| Value label always visible | The `Value` text node in each `Overview.Property.Value` must remain **visible** and contain the slot name (e.g. "Children", "Start Slot"). Only the OCC title is hidden, not the PV labels. |
+| Regel | Details |
+|-------|---------|
+| Farbe | `#EE41B9` — wird für Stroke und Fill verwendet |
+| Umrandung | Alle Slots auf Komponentenebene erhalten einen **1px Stroke** in `#EE41B9` (volle Deckkraft) |
+| Inaktiver Slot-Fill | `#EE41B9` mit **10% Deckkraft** — alle Slots, die NICHT der aktuell dokumentierte sind |
+| Aktiver Slot-Fill | `#EE41B9` mit **30% Deckkraft** — der aktuell dokumentierte/hervorgehobene Slot |
+| Versteckte Slots | Müssen sichtbar gemacht werden (`slot.visible = true`). Boolean-Properties wie `👁️ Show Start Slot` verwenden, um versteckte Slots einzublenden. |
+| Verschachtelte Instanz-Slots | Müssen ausgeblendet werden (`slot.visible = false`) — nur Slots zeigen, die direkt zur Komponente gehören, nicht Slots in verschachtelten Instanzen |
+| Leere Slots | **Alle Slots müssen befüllt sein** in der Slots-Visualisierung. Wenn ein Slot keinen Inhalt hat, einen "Slot Filler"-Frame (24×24px basierend auf `icon-size-md`, **kein Fill, kein Stroke, aber `visible: true`**) einfügen, damit der Slot im Layout gerendert wird. "Unsichtbar" bedeutet hier: Der Filler hat keine visuelle Erscheinung (kein Fill, kein Stroke) — er darf aber **NICHT** ausgeblendet werden (`visible: false`). Wenn der Slot bereits Kinder enthält, den Filler weglassen und nur das Farb-Styling (Fills + Strokes) anwenden. Große Slots sind typischerweise `fill`, daher reicht ein kleiner Filler; nur bei `hug`-Slots bestimmt der Filler die sichtbare Größe. Kernregel: **Jeder Slot muss mindestens ein sichtbares Kind-Element enthalten** (echten Inhalt oder einen No-Fill/No-Stroke-Filler), damit alle Slots in der Overview visuell dargestellt werden. |
+| Ein PV pro Slot | Jeder `Overview.Property.Value` zeigt die Komponente mit EINEM Slot als aktiv hervorgehoben, die anderen als inaktiv |
+| Value-Label immer sichtbar | Der `Value`-Text-Node in jedem `Overview.Property.Value` muss **sichtbar** bleiben und den Slot-Namen enthalten (z. B. "Children", "Start Slot"). Nur der OCC-Titel wird ausgeblendet, nicht die PV-Labels. |
 
-**Structure:**
+**Struktur:**
 ```
-Contents Slots (slot)
-└── Overview.Content.Container (title hidden)
+Contents Slots (Slot)
+└── Overview.Content.Container (Titel ausgeblendet)
     └── Content Slot
-        ├── Overview.Property.Value (label: "Start Slot")
-        │   └── Value Slot → Component instance with Start Slot active (pink), End Slot inactive (light)
-        ├── Overview.Property.Value (label: "Children")
-        │   └── Value Slot → Component instance with Children active, others inactive
-        └── Overview.Property.Value (label: "End Slot")
-            └── Value Slot → Component instance with End Slot active, others inactive
+        ├── Overview.Property.Value (Label: "Start Slot")
+        │   └── Value Slot → Komponenteninstanz mit Start Slot aktiv (pink), End Slot inaktiv (hell)
+        ├── Overview.Property.Value (Label: "Children")
+        │   └── Value Slot → Komponenteninstanz mit Children aktiv, andere inaktiv
+        └── Overview.Property.Value (Label: "End Slot")
+            └── Value Slot → Komponenteninstanz mit End Slot aktiv, andere inaktiv
 ```
 
-**Implementation:**
+**Implementierung:**
 ```js
-// For each slot in the component:
-// 1. Create a component instance with all slots visible
-// 2. Find all SLOT nodes that are NOT inside nested instances
-// 3. Apply outline + active/inactive colors
-// 4. Hide all slots that ARE inside nested instances
+// Für jeden Slot der Komponente:
+// 1. Komponenteninstanz erstellen mit allen Slots sichtbar
+// 2. Alle SLOT-Nodes finden, die NICHT in verschachtelten Instanzen liegen
+// 3. Umrandung + aktive/inaktive Farben anwenden
+// 4. Alle Slots innerhalb verschachtelter Instanzen ausblenden
 
 function isInsideNestedInstance(node, rootInstance) {
   let parent = node.parent;
@@ -176,54 +175,54 @@ function isInsideNestedInstance(node, rootInstance) {
 }
 ```
 
-**When component has no slots:** Hide the entire "Slots Container" section.
+**Wenn die Komponente keine Slots hat:** Den gesamten "Slots Container"-Abschnitt ausblenden.
 
 ### Examples (✨ Examples)
 
-Optional section for specific usage patterns. Can be left empty initially.
+Optionaler Abschnitt für spezifische Nutzungsmuster. Kann zunächst leer bleiben.
 
 ### Feature Backlog (📋 Feature Backlog)
 
-Optional section listing planned features. Can be left empty.
+Optionaler Abschnitt mit geplanten Features. Kann leer bleiben.
 
 ### Out of Scope (❌ Out of Scope)
 
-Optional section listing explicitly unsupported patterns. Can be left empty.
+Optionaler Abschnitt für explizit nicht unterstützte Muster. Kann leer bleiben.
 
 ---
 
 ## Workflow
 
-### Input Required
+### Benötigte Eingaben
 
-1. **Component page URL or name** — which component to document
-2. **File key and branch** — which Figma file to work in
+1. **Komponentenseiten-URL oder -Name** — welche Komponente dokumentiert werden soll
+2. **File Key und Branch** — in welcher Figma-Datei gearbeitet wird
 
-### Step 1: Propose (Read + Analyze)
+### Schritt 1: Vorschlag (Lesen + Analysieren)
 
-1. Read `componentPropertyDefinitions` from the component set
-2. Identify variant properties (🔀), boolean properties (👁️), and slots (📦)
-3. **Check for multi-set dev properties:** If the page has multiple Component Sets that represent variants of one logical component (e.g. "Drawer → Right", "Drawer → Left"), use `get_component_props` from the DB UX MCP to identify the code property (e.g. `direction`) and its values. Document this as a `🔀` variant property in the main overview — the designer actively selects which Component Set to use, making it a visible design decision. The value is passed to dev via `⚙️ Code Connect` internally, but in the Overview it's shown as `🔀` because it's designer-facing.
-3. Determine layout per property:
-   - **Horizontal:** ≤ 3 values, or values where instances are small (< 200px wide)
-   - **Vertical:** > 3 values, or values where instances are large/wide
-4. **Present the proposal to the user** in table format:
+1. `componentPropertyDefinitions` des Component Sets auslesen
+2. Variant-Properties (🔀), Boolean-Properties (👁️) und Slots (📦) identifizieren
+3. **Auf Multi-Set Dev Properties prüfen:** Wenn die Seite mehrere Component Sets hat, die Varianten einer logischen Komponente darstellen (z. B. "Drawer → Right", "Drawer → Left"), per `get_component_props` aus dem DB UX MCP die Code-Property (z. B. `direction`) und ihre Werte ermitteln. Diese wird als `🔀`-Variant-Property in der Haupt-Overview dokumentiert — der Designer wählt aktiv das Component Set, was es zu einer sichtbaren Design-Entscheidung macht. Intern wird der Wert über `⚙️ Code Connect` an die Entwicklung übergeben, in der Overview wird er aber als `🔀` dargestellt, weil er Designer-relevant ist.
+4. Layout pro Property bestimmen:
+   - **Horizontal:** ≤ 3 Werte oder Werte mit kleinen Instanzen (< 200px breit)
+   - **Vertikal:** > 3 Werte oder Werte mit großen/breiten Instanzen
+5. **Vorschlag dem User im Tabellenformat präsentieren:**
 
 ```
-## Proposed Overview for [Component]
+## Vorgeschlagene Overview für [Komponente]
 
 ### Header
-- Name: [Component Name]
+- Name: [Komponentenname]
 - Status: [Stable/Beta/Pre-Release]
-- Author: [initials]
-- Docs Link: [URL]
+- Autor: [Kürzel]
+- Docs-Link: [URL]
 
 ### Properties
 
-| Property | Layout | Values | Instance Config |
-|----------|--------|--------|-----------------|
-| � X | Vertical | (Def) A, B, C | variant: X=A, X=B, X=C |
-| 👁️ Y | Horizontal | (Def) True, False | default instance + toggle Y |
+| Property | Layout | Werte | Instanz-Konfiguration |
+|----------|--------|-------|----------------------|
+| 🔀 X | Vertikal | (Def) A, B, C | variant: X=A, X=B, X=C |
+| 👁️ Y | Horizontal | (Def) True, False | Default-Instanz + Y togglen |
 
 ### Slots
 | Slot |
@@ -231,85 +230,85 @@ Optional section listing explicitly unsupported patterns. Can be left empty.
 | 📦 Children |
 ```
 
-5. **Wait for user confirmation or adjustments** before proceeding
+5. **Auf Bestätigung oder Anpassungen des Users warten**, bevor fortgefahren wird
 
-### Step 2: Execute (Write to Figma)
+### Schritt 2: Ausführen (In Figma schreiben)
 
-Only after user confirmation:
-1. Import and place `Component.Overview` at 0/0
-2. Set header (name, badge variant, author, links)
-3. Create `Overview.Content.Container` per property in the "Contents Properties" slot
-4. Set orientation (Horizontal/Vertical) per container
-5. Create `Overview.Property.Value` per value in each content slot
-6. Place component instances in each Value Slot with correct variant/boolean configuration
-7. Fill the Slots section
+Erst nach Bestätigung durch den User:
+1. `Component.Overview` importieren und an 0/0 platzieren
+2. Header setzen (Name, State-Badge-Variante, Autor, Links)
+3. Pro Property einen `Overview.Content.Container` im "Contents Properties"-Slot erstellen
+4. Ausrichtung (Horizontal/Vertikal) pro Container setzen
+5. Pro Wert einen `Overview.Property.Value` in jedem Content-Slot erstellen
+6. Komponenteninstanzen in jedem Value Slot mit korrekter Variant-/Boolean-Konfiguration platzieren
+7. Slots-Abschnitt befüllen
 
-### Rules for Filling
+### Regeln beim Ausfüllen
 
-| Rule | Details |
-|------|---------|
-| Value naming | Default value always gets `(Def)` prefix: `(Def) Small`, `(Def) True`, `(Def) False` |
-| Instance sizing | **Never scale instances.** For responsive/layout components that are very large (> 700px wide or tall), `resize()` to a fixed size is allowed as an exception — the component adapts its internal layout. Use consistent sizes across all Property Values of the same property. Switch to Vertical layout if too wide. |
-| Multi-set property visualization | When a property is implemented as separate Component Sets for different directions/orientations (e.g. "Drawer → Right" + "Drawer → Top"), show **instances from both orientations** side by side in each Property Value. This helps designers see how the property behaves across orientations. Use horizontal layout with `3xl` gap (48px) for the Value Slot. |
-| Boolean instances | Use the **default variant** of the component and toggle only the relevant boolean property |
-| Variant instances | Use a dedicated variant from the component set matching the property value |
-| Layout choice | Horizontal for ≤ 3 values with small instances. Vertical for wide/tall instances or > 3 values |
-| Property ordering | `👁️ Show X` boolean properties are placed **directly above** (= before in the list) the property they control (e.g. `👁️ Show Subnavigation` directly above `🔀 Subnavigation Position`). This matches the convention in `db-ux-design-library`. |
-| Orientation property | Set `"Orientation": "Vertical"` or `"Horizontal"` on the `Overview.Content.Container` instance |
-| No properties | If a component has no variant/boolean properties, hide the "Property Container" section |
-| Slot visualization | Show slots using color-coded component instances (see Slots section below) |
-| Only boolean/variant | Text properties (✏️) and Instance Swap properties (🔄) are not shown in the overview by default. Instance Swaps are typically icon swaps — if one needs to be shown, it will be explicitly briefed. |
-| Skip fixed variants | Variant properties with only **one possible value** (no real choice) are internal/structural and must be skipped in the overview. E.g. "Variant=Tree", "Tree=True", "Width=Full" when those are the only options. |
-| Interaction States | If the component has an `🔀 Interaction States` variant property, **always show all values** including "None" (which corresponds to Disabled). Show every state that exists in the component set. |
-| Code Connect properties | If a component has visible Code Connect properties (exposed on the first level, settable by the designer), list them with their possible values in the Properties section using the same `Overview.Content.Container` → `Overview.Property.Value` structure. Title gets the `⚙️` prefix. Value slots show text-only values (no instance needed) unless the property visibly changes the component. See "Code Connect Properties (⚙️)" section above for details. |
-| Multi-set dev properties | When a dev property is represented as **separate Component Sets** in the design (e.g. "Drawer → Right", "Drawer → Left" for the `direction` property), document it as a **visible variant property** (`🔀`) in the main overview — not as `⚙️`, because it is a real design decision the designer makes. Use the DB UX MCP (`get_component_props`) to identify the property name and its possible values. Show instances from each Component Set as the Property Values. |
-| Nested slots filter | When styling slots in instances, ONLY style direct component slots, hide all slots inside nested instances |
-| Conditional slot visibility | If a slot is only visible when a certain property is set (e.g. `📦 Children` only shows when `Expanded=True`), set that property on the visualization instance. Add a note in the Value label like "Children (Group)" to clarify which sub-variant it belongs to. |
+| Regel | Details |
+|-------|---------|
+| Wert-Benennung | Der Standardwert erhält immer das Präfix `(Def)`: `(Def) Small`, `(Def) True`, `(Def) False` |
+| Instanzgröße | **Instanzen niemals skalieren.** Bei responsiven/Layout-Komponenten, die sehr groß sind (> 700px breit oder hoch), ist `resize()` auf eine feste Größe als Ausnahme erlaubt — die Komponente passt ihr internes Layout an. Innerhalb einer Property konsistente Größen verwenden. Bei zu breiten Instanzen auf vertikales Layout wechseln. |
+| Multi-Set-Property-Visualisierung | Wenn eine Property als separate Component Sets für verschiedene Richtungen/Orientierungen implementiert ist (z. B. "Drawer → Right" + "Drawer → Top"), werden **Instanzen beider Orientierungen** nebeneinander in jedem Property Value gezeigt. Das hilft Designern zu sehen, wie sich die Property über Orientierungen verhält. Horizontales Layout mit `3xl`-Gap (48px) für den Value Slot verwenden. |
+| Boolean-Instanzen | Die **Default-Variante** der Komponente verwenden und nur die relevante Boolean-Property togglen |
+| Variant-Instanzen | Eine dedizierte Variante aus dem Component Set verwenden, die dem Property-Wert entspricht |
+| Layout-Wahl | Horizontal bei ≤ 3 Werten mit kleinen Instanzen. Vertikal bei breiten/hohen Instanzen oder > 3 Werten |
+| Property-Reihenfolge | `👁️ Show X`-Boolean-Properties werden **direkt oberhalb** (= davor in der Liste) der Property platziert, die sie steuern (z. B. `👁️ Show Subnavigation` direkt über `🔀 Subnavigation Position`). Das entspricht der Konvention in `db-ux-design-library`. |
+| Orientation-Property | `"Orientation": "Vertical"` oder `"Horizontal"` auf der `Overview.Content.Container`-Instanz setzen |
+| Keine Properties | Wenn eine Komponente keine Variant-/Boolean-Properties hat, den "Property Container"-Abschnitt ausblenden |
+| Slot-Visualisierung | Slots mit farbcodierten Komponenteninstanzen darstellen (siehe Slots-Abschnitt oben) |
+| Nur Boolean/Variant | Text-Properties (✏️) und Instance-Swap-Properties (🔄) werden standardmäßig nicht in der Overview gezeigt. Instance Swaps sind typischerweise Icon-Tausch — wenn einer gezeigt werden soll, wird das explizit gebrieft. |
+| Feste Varianten überspringen | Variant-Properties mit nur **einem möglichen Wert** (keine echte Auswahl) sind intern/strukturell und werden in der Overview übersprungen. Z. B. "Variant=Tree", "Tree=True", "Width=Full" wenn das die einzigen Optionen sind. |
+| Interaction States | Wenn die Komponente eine `🔀 Interaction States`-Variant-Property hat, **immer alle Werte zeigen** — inklusive "None" (entspricht Disabled). Jeden Zustand zeigen, der im Component Set existiert. |
+| Code Connect Properties | Wenn eine Komponente sichtbare Code Connect Properties hat (auf erster Ebene exponiert, vom Designer einstellbar), werden diese mit allen möglichen Werten im Properties-Abschnitt aufgelistet. Titel erhält das `⚙️`-Präfix. Value Slots zeigen nur Textwerte (keine Instanz nötig), es sei denn die Property verändert die Komponente sichtbar. Siehe Abschnitt "Code Connect Properties (⚙️)" oben. |
+| Multi-Set Dev Properties | Wenn eine Dev-Property als **separate Component Sets** im Design dargestellt wird (z. B. "Drawer → Right", "Drawer → Left" für die `direction`-Property), wird sie als **sichtbare Variant-Property** (`🔀`) in der Haupt-Overview dokumentiert — nicht als `⚙️`, weil es eine echte Design-Entscheidung ist. Per DB UX MCP (`get_component_props`) den Property-Namen und die möglichen Werte ermitteln. Instanzen aus jedem Component Set als Property Values zeigen. |
+| Verschachtelte Slots filtern | Beim Styling von Slots in Instanzen NUR direkte Komponenten-Slots stylen, alle Slots innerhalb verschachtelter Instanzen ausblenden |
+| Bedingte Slot-Sichtbarkeit | Wenn ein Slot nur bei einer bestimmten Property-Einstellung sichtbar ist (z. B. `📦 Children` nur bei `Expanded=True`), diese Property auf der Visualisierungsinstanz setzen. Im Value-Label eine Anmerkung ergänzen wie "Children (Group)", um die Zugehörigkeit zur Sub-Variante zu verdeutlichen. |
 
-### What Must Be Done Manually
+### Was manuell erledigt werden muss
 
-- **Preview:** Placing representative instances in light/dark slots
-- **Anatomy:** Creating labeled visual breakdowns
-- **Page Layout:** After creating Overviews, run the `db-ux-component-page-layout` skill to organize the page (move Component Sets to the right of Overviews)
-- **Examples:** Documenting specific usage patterns
-- **Feature Backlog / Out of Scope:** Content decisions
+- **Preview:** Repräsentative Instanzen in Light-/Dark-Slots platzieren
+- **Anatomy:** Beschriftete visuelle Aufschlüsselungen erstellen
+- **Seitenlayout:** Nach dem Erstellen der Overviews den `db-ux-component-page-layout`-Skill ausführen, um die Seite zu organisieren (Component Sets rechts neben die Overviews verschieben)
+- **Examples:** Spezifische Nutzungsmuster dokumentieren
+- **Feature Backlog / Out of Scope:** Inhaltliche Entscheidungen
 
 ---
 
-## Example: Drawer
+## Beispiel: Drawer
 
 ### Header
-- **Component Name:** Drawer
-- **State:** Stable (set variant `"State": "Stable"` on the State badge instance)
-- **Author:** lp
+- **Komponentenname:** Drawer
+- **State:** Stable (Variante `"State": "Stable"` auf der State-Badge-Instanz setzen)
+- **Autor:** lp
 - **Link 1:** Documentation
 - **Link 2:** Submit Feedback
 
 ### Properties
 
-| Property | Layout | Values | Instance Config |
-|----------|--------|--------|-----------------|
-| 🔀 Container Size | Vertical | (Def) Small, Medium, Large, Full, Custom | Variant per size, Rounded=False |
-| 🔀 Rounded | Horizontal | (Def) False, True | Default size, toggle Rounded |
-| 👁️ Show Backdrop | Horizontal | (Def) True, False | Default variant + toggle boolean |
-| 👁️ Show Footer | Horizontal | (Def) False, True | Default variant + toggle boolean |
-| 👁️ Show Spacing | Horizontal | (Def) True, False | Default variant + toggle boolean |
+| Property | Layout | Werte | Instanz-Konfiguration |
+|----------|--------|-------|----------------------|
+| 🔀 Container Size | Vertikal | (Def) Small, Medium, Large, Full, Custom | Variante pro Größe, Rounded=False |
+| 🔀 Rounded | Horizontal | (Def) False, True | Standardgröße, Rounded togglen |
+| 👁️ Show Backdrop | Horizontal | (Def) True, False | Default-Variante + Boolean togglen |
+| 👁️ Show Footer | Horizontal | (Def) False, True | Default-Variante + Boolean togglen |
+| 👁️ Show Spacing | Horizontal | (Def) True, False | Default-Variante + Boolean togglen |
 
 ### Slots
 
-| Slot | Description |
-|------|-------------|
-| 📦 Children | Main content area of the drawer |
+| Slot | Beschreibung |
+|------|--------------|
+| 📦 Children | Haupt-Inhaltsbereich des Drawers |
 
 ---
 
-## Notes
+## Hinweise
 
-- The template is an **instance** of an external library component — import it via `figma.importComponentByKeyAsync(key)`
-- **Critical:** All slots in the template components (`Component.Overview`, `Overview.Content.Container`, `Overview.Property.Value`) must be **empty by default** — otherwise nested instance children get compound IDs that cannot be navigated
-- When creating instances via `createInstance()` and appending to slots, `findOne`/`findAll` works on the newly created instances
-- The Plugin API may not immediately see freshly placed instances on branches (sync delay) — if a node is not found, it may need a moment to persist
-- Use `get_metadata` to read the template structure, then `use_figma` to write
-- State badge: Set via variant property `"State": "Stable"` (or "Beta", "Concept", "Pre-Release") on the State instance — not just text
-- **Never scale component instances** in Value Slots — use original size. Exception: responsive/layout components > 700px can be `resize()`d to a consistent fixed size (see Instance sizing rule).
-- Author initials: lp = Leape, si = Sissito, to = Tobi
+- Die Vorlage ist eine **Instanz** einer externen Library-Komponente — Import über `figma.importComponentByKeyAsync(key)`
+- **Wichtig:** Alle Slots in den Vorlagenkomponenten (`Component.Overview`, `Overview.Content.Container`, `Overview.Property.Value`) müssen **standardmäßig leer** sein — sonst erhalten verschachtelte Instanzkinder zusammengesetzte IDs, die nicht navigiert werden können
+- Wenn Instanzen per `createInstance()` erstellt und in Slots eingefügt werden, funktioniert `findOne`/`findAll` auf den neu erstellten Instanzen
+- Die Plugin API sieht frisch platzierte Instanzen auf Branches möglicherweise nicht sofort (Sync-Verzögerung) — wenn ein Node nicht gefunden wird, braucht er eventuell einen Moment zum Persistieren
+- `get_metadata` verwenden, um die Vorlagenstruktur zu lesen, dann `use_figma` zum Schreiben
+- State Badge: Über Variant-Property `"State": "Stable"` (oder "Beta", "Concept", "Pre-Release") auf der State-Instanz setzen — nicht nur als Text
+- **Komponenteninstanzen in Value Slots niemals skalieren** — Originalgröße verwenden. Ausnahme: Responsive/Layout-Komponenten > 700px können per `resize()` auf eine konsistente feste Größe gebracht werden (siehe Regel zur Instanzgröße).
+- Autoren-Kürzel: lp = Leape, si = Sissito, to = Tobi

@@ -1,44 +1,44 @@
-# DB UX Design System – Figma Library Conventions (Core Components)
+# DB UX Design System – Figma Library-Konventionen (Core Components)
 
 
-This skill describes the naming patterns, property conventions, and structural rules for maintaining and extending the DB UX Design System Core Components Figma Library (v3). It works hand-in-hand with the DB UX MCP server.
+Dieses Steering beschreibt Naming-Pattern, Property-Konventionen und Strukturregeln für die Pflege und Erweiterung der DB UX Design System Core Components Figma-Library (v3). Es arbeitet Hand in Hand mit dem DB UX MCP Server.
 
-## Related Skills
+## Verwandte Steerings
 
-| Task | Skill |
-|------|-------|
-| Create/fill Component.Overview documentation frames | `db-ux-component-overview` |
-| Organize page layout (position Sections, sort, spacing) | `db-ux-component-page-layout` |
-| Review library/component quality (spacing, colors, naming) | `db-ux-design-review` |
+| Aufgabe | Steering |
+|---------|----------|
+| Component.Overview-Dokumentationsframes erstellen/ausfüllen | `db-ux-component-overview` |
+| Seitenlayout organisieren (Sections positionieren, sortieren, Abstände) | `db-ux-component-page-layout` |
+| Library-/Komponentenqualität prüfen (Abstände, Farben, Naming) | `db-ux-design-review` |
 
-**When to use which:**
-- Building a new component or adding variants → start with this skill (conventions)
-- Done building → run `db-ux-component-overview` to create documentation
-- After overview → run `db-ux-component-page-layout` to clean up the page
-- Before publishing → run `db-ux-design-review` to validate quality
+**Wann welches Steering verwenden:**
+- Neue Komponente bauen oder Varianten hinzufügen → mit diesem Steering starten (Konventionen)
+- Fertig gebaut → `db-ux-component-overview` für die Dokumentation ausführen
+- Nach der Overview → `db-ux-component-page-layout` zum Aufräumen der Seite
+- Vor dem Publish → `db-ux-design-review` zur Qualitätsprüfung
 
-## Source Library
+## Quell-Library
 
 - **Core Components:** [DB-UX-DS-v3 — Core Components](https://www.figma.com/design/mlJ6R0GkfR15a93KSlqXtB)
-  Contains stable, production-ready base components (Button, Checkbox, Input, etc.) with complete variant matrices.
+  Enthält stabile, produktionsreife Basiskomponenten (Button, Checkbox, Input etc.) mit vollständigen Variantenmatrizen.
 
 ---
 
 ## 1. Naming
 
-### 1.1 Components
+### 1.1 Komponenten
 
-Main components follow this pattern:
+Hauptkomponenten folgen diesem Muster:
 
 ```
 COMPONENT NAME → Variant - SubVariant
 ```
 
-- **Arrow `→`** separates the component name from its first variant dimension.
-- **Dash `-`** separates additional sub-variant dimensions.
-- **`(Def)`** marks the default value of a variant property.
+- **Pfeil `→`** trennt den Komponentennamen von der ersten Variant-Dimension.
+- **Bindestrich `-`** trennt weitere Sub-Variant-Dimensionen.
+- **`(Def)`** kennzeichnet den Standardwert einer Variant-Property.
 
-**Examples:**
+**Beispiele:**
 
 - `Checkbox → (Def) Medium - (Def) Auto Width`
 - `Checkbox → Small - Full Width`
@@ -46,300 +46,300 @@ COMPONENT NAME → Variant - SubVariant
 - `Icon Button → Ghost`
 - `Notification → Standalone - (Def) Icon`
 
-### 1.2 Subcomponents
+### 1.2 Subkomponenten
 
-Subcomponents are prefixed with `↳` and use UPPERCASE for the subcomponent's role name:
+Subkomponenten werden mit `↳` vorangestellt und verwenden GROSSBUCHSTABEN für den Rollennamen:
 
 ```
 ↳ Parent → SUBCOMPONENT ROLE (Maturity)
 ```
 
-**Description rule:** The Figma description of a subcomponent must always start with the warning line:
+**Beschreibungsregel:** Die Figma-Beschreibung einer Subkomponente muss immer mit folgender Warnzeile beginnen:
 
 ```
 ⚠️ Only use the subcomponent within the main component!
 ```
 
-Any additional description text follows after this line.
+Zusätzlicher Beschreibungstext folgt danach.
 
-**Examples:**
+**Beispiele:**
 
 - `↳ Control Panel → BRAND`
 - `↳ Control Panel → PRIMARY ACTION (Pre-Release)`
 - `↳ Control Panel → SECONDARY ACTIONS (Pre-Release)`
 
-### 1.3 Helper Components
+### 1.3 Hilfskomponenten
 
-Helper components that are only used internally (not published) are prefixed with a dot `.`:
+Hilfskomponenten, die nur intern verwendet werden (nicht publiziert), erhalten einen Punkt `.` als Präfix:
 
 ```
 .HelperName
 ```
 
-**Description rule:** The Figma description of a helper component must always start with the warning line:
+**Beschreibungsregel:** Die Figma-Beschreibung einer Hilfskomponente muss immer mit folgender Warnzeile beginnen:
 
 ```
 ⚠️ Only use the helpercomponent within the main component!
 ```
 
-Any additional description text follows after this line.
+Zusätzlicher Beschreibungstext folgt danach.
 
-**Examples:**
+**Beispiele:**
 
 - `.⚙️ Code Connect`
 - `.Slot – Single`
 
-### 1.4 Layer Naming
+### 1.4 Layer-Benennung
 
-Layers within a component follow semantic naming:
+Layer innerhalb einer Komponente folgen einer semantischen Benennung:
 
-| Layer Type            | Naming Pattern                              | Example                                               |
-| --------------------- | ------------------------------------------- | ----------------------------------------------------- |
-| Main wrapper          | `Container`                                 | `Container`                                           |
-| Semantic group        | `[Function] Container`                      | `Label Container`, `Icon Container`, `Action Section` |
-| Text content          | Descriptive name                            | `Label`, `Text`, `Headline`                           |
-| Icon color carrier    | `Icon Color`                                | `Icon Color`                                          |
-| Icon instance wrapper | `Icon Component`                            | `Icon Component`                                      |
-| Hidden a11y text      | `Text Screenreader` or `Label Screenreader` | `Text Screenreader`                                   |
-| Slot placeholder      | `Children` or `Slot`                        | `Children`                                            |
-| Required indicator    | `Required Container`                        | `Required Container`                                  |
+| Layer-Typ | Benennungsmuster | Beispiel |
+|-----------|------------------|----------|
+| Haupt-Wrapper | `Container` | `Container` |
+| Semantische Gruppe | `[Funktion] Container` | `Label Container`, `Icon Container`, `Action Section` |
+| Textinhalt | Beschreibender Name | `Label`, `Text`, `Headline` |
+| Icon-Farbträger | `Icon Color` | `Icon Color` |
+| Icon-Instanz-Wrapper | `Icon Component` | `Icon Component` |
+| Versteckter A11y-Text | `Text Screenreader` oder `Label Screenreader` | `Text Screenreader` |
+| Slot-Platzhalter | `Children` oder `Slot` | `Children` |
+| Pflichtfeld-Indikator | `Required Container` | `Required Container` |
 
 ---
 
 ## 2. Properties
 
-### 2.1 Property Naming
+### 2.1 Property-Benennung
 
-Properties use **Title Case** with spaces:
+Properties verwenden **Title Case** mit Leerzeichen:
 
 - `Interaction State`
 - `Show Sub Navigation`
 - `Control Panel Desktop Position`
 
-Boolean properties typically start with a verb or adjective:
+Boolean-Properties beginnen typischerweise mit einem Verb oder Adjektiv:
 
 - `Disabled`, `Checked`, `Indeterminate`, `Expanded`
 - `Show Label`, `Show Icon`
 
-### 2.2 Property Icons
+### 2.2 Property-Icons
 
-Properties are prefixed with emoji icons to indicate their type and purpose:
+Properties erhalten Emoji-Präfixe, die ihren Typ und Zweck kennzeichnen:
 
-| Icon | Purpose                               | Example         |
-| ---- | ------------------------------------- | --------------- |
-| 👁️   | Show/Hide toggle (toggles visibility) | `👁️ Show Label` |
-| 🔀   | Variant selection                     | `🔀 Variant`    |
-| 📦   | Slot (content area)                   | `📦 Children`   |
-| 🔄   | Icon swap (instance swap for icons)   | `🔄 Icon`       |
-| ✏️   | Text override                         | `✏️ Label`      |
+| Icon | Zweck | Beispiel |
+|------|-------|----------|
+| 👁️ | Ein-/Ausblenden (Sichtbarkeits-Toggle) | `👁️ Show Label` |
+| 🔀 | Variantenauswahl | `🔀 Variant` |
+| 📦 | Slot (Inhaltsbereich) | `📦 Children` |
+| 🔄 | Icon-Tausch (Instance Swap für Icons) | `🔄 Icon` |
+| ✏️ | Text-Override | `✏️ Label` |
 
-> **Note:** The `🎨` design-only prefix and `💻` dev-only prefix are **deprecated** and no longer used. Since Code Connect handles the mapping between design properties and code props, all properties are now named purely from a design perspective:
+> **Hinweis:** Die Präfixe `🎨` (design-only) und `💻` (dev-only) sind **veraltet** und werden nicht mehr verwendet. Da Code Connect das Mapping zwischen Design-Properties und Code-Props übernimmt, werden alle Properties nun rein aus Design-Perspektive benannt:
 >
-> - Variants always use `🔀` (including Interaction State)
-> - Show/Hide toggles always use `👁️` (even if technically implemented as a Variant with True/False values)
-> - Show/Hide properties should be placed directly above the property they control (e.g. `👁️ Show Children Slot` directly above `📦 Children`)
-> - Instance swaps always use `🔄`
-> - Slots always use `📦`
-> - Text overrides always use `✏️`
+> - Varianten verwenden immer `🔀` (einschließlich Interaction State)
+> - Ein-/Ausblende-Toggles verwenden immer `👁️` (auch wenn technisch als Variant mit True/False-Werten implementiert)
+> - Show/Hide-Properties sollten direkt über der Property platziert werden, die sie steuern (z. B. `👁️ Show Children Slot` direkt über `📦 Children`)
+> - Instance Swaps verwenden immer `🔄`
+> - Slots verwenden immer `📦`
+> - Text-Overrides verwenden immer `✏️`
 
-### 2.3 Default Values
+### 2.3 Standardwerte
 
-- Default values are always prefixed with `(Def)`: `(Def) Enabled`, `(Def) False`, `(Def) Medium`
-- The `(Def)` value must always be listed **first** in the property's value list. Example: `(Def) Top, Bottom` – not `Bottom, (Def) Top`.
-- The default variant is positioned first (top-left) in the variant matrix.
+- Standardwerte erhalten immer das Präfix `(Def)`: `(Def) Enabled`, `(Def) False`, `(Def) Medium`
+- Der `(Def)`-Wert muss immer **an erster Stelle** in der Werteliste stehen. Beispiel: `(Def) Top, Bottom` – nicht `Bottom, (Def) Top`.
+- Die Default-Variante wird als erste (oben links) in der Variantenmatrix positioniert.
 
-### 2.4 Code Connect Helper Components
+### 2.4 Code Connect Hilfskomponenten
 
-Each component contains a hidden `.⚙️ Code Connect` instance that stores metadata for the code generation bridge.
+Jede Komponente enthält eine versteckte `.⚙️ Code Connect`-Instanz, die Metadaten für die Code-Generierungs-Brücke speichert.
 
-**Size:** Always `0 × 0` px (effectively invisible).
+**Größe:** Immer `0 × 0` px (effektiv unsichtbar).
 
-**Placement:** Always the **first child** of the component's root frame, **absolutely positioned** (not part of the Auto Layout flow), **locked** (`locked: true`).
+**Platzierung:** Immer das **erste Kind** des Root-Frames der Komponente, **absolut positioniert** (nicht Teil des Auto-Layout-Flows), **gesperrt** (`locked: true`).
 
-**Content per component:** Contains Code Connect metadata mapping Figma properties to framework component props. This enables the DB UX MCP server to resolve component usage from Figma nodes.
+**Inhalt pro Komponente:** Enthält Code Connect Metadaten, die Figma-Properties auf Framework-Component-Props mappen. Das ermöglicht dem DB UX MCP Server, die Komponentenverwendung aus Figma-Nodes aufzulösen.
 
 ### 2.5 FloatingContainer
 
-Interactive components (e.g. Button, Icon Button) include a `FloatingContainer` instance for floating UI elements (tooltips, popovers, badges).
+Interaktive Komponenten (z. B. Button, Icon Button) enthalten eine `FloatingContainer`-Instanz für schwebende UI-Elemente (Tooltips, Popovers, Badges).
 
-**Placement:** Always the **second child** (index 1, directly after `.⚙️ Code Connect`), **absolutely positioned**. In exceptional cases (e.g. complex components with multiple nested containers), the FloatingContainer may also be placed inside a Frame directly below Code Connect rather than at the component root.
+**Platzierung:** Immer das **zweite Kind** (Index 1, direkt nach `.⚙️ Code Connect`), **absolut positioniert**. In Ausnahmefällen (z. B. komplexe Komponenten mit mehreren verschachtelten Containern) kann der FloatingContainer auch innerhalb eines Frames direkt unterhalb von Code Connect platziert werden statt auf Komponentenebene.
 
-**Setup rules:**
+**Setup-Regeln:**
 
-- Constraints: `STRETCH` horizontal + `STRETCH` vertical (Left & Right, Top & Bottom)
-- `visible: false` by default, bound to a `👁️ Show FloatingContainer` boolean property
-- **Locked** (`locked: true`) — prevents accidental selection/movement by users
-- Resized to match the variant's dimensions
-- The `↳ FloatingItem` inside the slot should be set to `Position=top-start, Edge=center` (unless the component requires a different placement)
+- Constraints: `STRETCH` horizontal + `STRETCH` vertikal (Left & Right, Top & Bottom)
+- `visible: false` standardmäßig, gebunden an eine `👁️ Show FloatingContainer`-Boolean-Property
+- **Gesperrt** (`locked: true`) — verhindert versehentliches Auswählen/Verschieben durch User
+- Auf die Abmessungen der Variante angepasst
+- Das `↳ FloatingItem` innerhalb des Slots sollte auf `Position=top-start, Edge=center` gesetzt sein (es sei denn, die Komponente erfordert eine andere Platzierung)
 
 ---
 
-## 3. Component Structure
+## 3. Komponentenstruktur
 
 ### 3.1 Auto Layout (Canvas Stacking)
 
-All components use Auto Layout exclusively. Key rules:
+Alle Komponenten verwenden ausschließlich Auto Layout. Wichtige Regeln:
 
-- **Root frame**: Auto Layout with the component's primary stacking direction.
-- **Nested containers**: Each semantic group (icon, label, actions) gets its own Auto Layout frame.
-- **Spacing**: Always uses DB Design Tokens via variables – never hard-coded values.
-- **Variable Source**: All variables (spacing, colors, typography, etc.) come from the **Core Foundation Library** (`@db-ux/core-foundations`). The Core Components Library does **not** define its own variables — it only consumes them. Exceptions (local variables in the Components Library) are rare and must be explicitly confirmed during review.
-- **Canvas stacking** is set to **"First on top"** (default). This means the first child in the layer list renders on top visually. Used for overlapping elements (Focus rings, tooltips, popovers) where children need to visually overlap without affecting layout flow.
-- **Resizing behavior**: Components are set to `Hug contents` by default. Full-width variants use `Fill container`.
+- **Root-Frame**: Auto Layout mit der primären Stapelrichtung der Komponente.
+- **Verschachtelte Container**: Jede semantische Gruppe (Icon, Label, Actions) erhält einen eigenen Auto-Layout-Frame.
+- **Abstände**: Verwenden immer DB Design Tokens via Variablen – niemals hart codierte Werte.
+- **Variablenquelle**: Alle Variablen (Abstände, Farben, Typografie etc.) stammen aus der **Core Foundation Library** (`@db-ux/core-foundations`). Die Core Components Library definiert **keine eigenen Variablen** — sie konsumiert sie nur. Ausnahmen (lokale Variablen in der Components Library) sind selten und müssen im Review explizit bestätigt werden.
+- **Canvas Stacking** ist auf **"First on top"** (Standard) eingestellt. Das erste Kind in der Layer-Liste wird visuell oben gerendert. Wird für überlappende Elemente (Focus Rings, Tooltips, Popovers) verwendet, bei denen Kinder visuell überlappen müssen, ohne den Layout-Flow zu beeinflussen.
+- **Resize-Verhalten**: Komponenten sind standardmäßig auf `Hug contents` gestellt. Full-Width-Varianten verwenden `Fill container`.
 
-### 3.2 Layer Hierarchy (Standard Pattern)
+### 3.2 Layer-Hierarchie (Standardmuster)
 
 ```
 Component (Symbol/Variant)
-├── .⚙️ Code Connect              ← Hidden metadata (0×0, first child)
-├── FloatingContainer              ← Absolutely positioned, STRETCH constraints, hidden + locked
-├── Container                      ← Main Auto Layout frame
-│   ├── [Element] Container        ← Semantic container (e.g. "Checkbox Container")
-│   │   └── Icon Container         ← If element has an icon
-│   │       ├── Icon Color         ← Rounded Rectangle (color carrier)
-│   │       └── Icon Component     ← Frame containing the icon instance
+├── .⚙️ Code Connect              ← Versteckte Metadaten (0×0, erstes Kind)
+├── FloatingContainer              ← Absolut positioniert, STRETCH Constraints, hidden + locked
+├── Container                      ← Haupt-Auto-Layout-Frame
+│   ├── [Element] Container        ← Semantischer Container (z. B. "Checkbox Container")
+│   │   └── Icon Container         ← Falls Element ein Icon hat
+│   │       ├── Icon Color         ← Rounded Rectangle (Farbträger)
+│   │       └── Icon Component     ← Frame mit der Icon-Instanz
 │   ├── Label Container
-│   │   ├── Label                  ← Text layer
-│   │   └── Required Container     ← Optional, hidden by default
-│   ├── Children (Slot)            ← Hidden slot for additional content
-│   ├── Label Screenreader         ← Hidden text (0×0) for a11y
-│   └── Required                   ← Hidden text (0×0) for a11y
-└── Infotext                       ← Sub-instance for validation messages (optional)
+│   │   ├── Label                  ← Text-Layer
+│   │   └── Required Container     ← Optional, standardmäßig ausgeblendet
+│   ├── Children (Slot)            ← Versteckter Slot für zusätzliche Inhalte
+│   ├── Label Screenreader         ← Versteckter Text (0×0) für A11y
+│   └── Required                   ← Versteckter Text (0×0) für A11y
+└── Infotext                       ← Sub-Instanz für Validierungsmeldungen (optional)
 ```
 
-### 3.3 Screenreader Texts
+### 3.3 Screenreader-Texte
 
-- Hidden text layers with size `0×0` px provide accessibility information.
-- Named `Text Screenreader` or `Label Screenreader`.
-- Always **absolutely positioned** within the component (not part of Auto Layout flow).
-- Used to communicate state or label overrides to assistive technology in the code output.
+- Versteckte Text-Layer mit Größe `0×0` px liefern Accessibility-Informationen.
+- Benannt als `Text Screenreader` oder `Label Screenreader`.
+- Immer **absolut positioniert** innerhalb der Komponente (nicht Teil des Auto-Layout-Flows).
+- Dienen dazu, Status- oder Label-Overrides an assistive Technologien in der Code-Ausgabe zu kommunizieren.
 
-### 3.4 Icon Pattern
+### 3.4 Icon-Muster
 
-Icons always follow this nested structure:
+Icons folgen immer dieser verschachtelten Struktur:
 
 ```
 Icon Container (Frame)
-├── Icon Color (Rounded Rectangle – carries the fill color)
+├── Icon Color (Rounded Rectangle – trägt die Füllfarbe)
 └── Icon Component (Frame)
-    └── <IconName> (Instance of icon component)
+    └── <IconName> (Instanz der Icon-Komponente)
 ```
 
-This pattern allows:
+Dieses Muster ermöglicht:
 
-- Color control via the `Icon Color` rectangle (using color variables).
-- Icon swapping via the instance inside `Icon Component`.
+- Farbsteuerung über das `Icon Color`-Rectangle (mittels Color-Variablen).
+- Icon-Tausch über die Instanz innerhalb von `Icon Component`.
 
 ### 3.5 Slots
 
-Slots are hidden frames that serve as insertion points for additional content in code.
+Slots sind Frames, die als Einfügepunkte für zusätzliche Inhalte im Code dienen.
 
-**Current convention** (subject to change – see [Slots documentation](https://github.com/db-ux-design-system/core-team/blob/main/docs/content/components/Slots.md)):
+**Aktuelle Konvention** (kann sich ändern – siehe [Slots-Dokumentation](https://github.com/db-ux-design-system/core-team/blob/main/docs/content/components/Slots.md)):
 
-- Slots use Figma's native Slot feature (component property type).
-- Slots are **not always hidden**. When they are hidden by default, there is a corresponding `👁️ Show ...` boolean property to toggle their visibility.
-- The legacy `.Slot` helper component (prefixed with `.`) predates Figma's native slots and is being **phased out** step by step.
+- Slots verwenden Figmas natives Slot-Feature (Component-Property-Typ).
+- Slots sind **nicht immer ausgeblendet**. Wenn sie standardmäßig ausgeblendet sind, gibt es eine zugehörige `👁️ Show ...`-Boolean-Property zum Togglen der Sichtbarkeit.
+- Die Legacy-`.Slot`-Hilfskomponente (mit `.`-Präfix) stammt aus der Zeit vor Figmas nativen Slots und wird **schrittweise abgelöst**.
 
-**Restricted slots (preferred instances):**
+**Eingeschränkte Slots (Preferred Instances):**
 
-When a slot has "Only allow preferred instances" enabled (i.e. only specific components are valid), the slot's description must include a hint line:
+Wenn bei einem Slot "Only allow preferred instances" aktiviert ist (d. h. nur bestimmte Komponenten sind gültig), muss die Slot-Beschreibung folgenden Hinweis enthalten:
 
 ```
 💡 Only accepts **[Component Name]**
 ```
 
-- The component name must be **bold**.
-- The "Only accepts" line is always the **first line** in the description. If there is additional description text, it follows after.
-- Use the `↳` prefix for subcomponents (e.g. `💡 Only accepts ↳**ControlPanel -> Brand**`).
+- Der Komponentenname muss **fett** sein.
+- Die "Only accepts"-Zeile steht immer **an erster Stelle** in der Beschreibung. Zusätzlicher Text folgt danach.
+- Bei Subkomponenten das `↳`-Präfix verwenden (z. B. `💡 Only accepts ↳**ControlPanel -> Brand**`).
 
-**Slot naming direction (upcoming):**
+**Slot-Benennungsrichtung (kommend):**
 
-- `Children` will primarily be used in **container components** (e.g. Card, Shell) or **new components** where the slot represents the main content area.
-- For existing components where a slot is placed alongside already existing text or label content (supplementary/addon slot), the name will shift to `End` (or `Start`) instead of `Children`.
-- This clarifies the slot's role: `Children` = primary content area, `End`/`Start` = supplementary addon position.
+- `Children` wird primär in **Container-Komponenten** (z. B. Card, Shell) oder **neuen Komponenten** verwendet, wo der Slot den Haupt-Inhaltsbereich darstellt.
+- Bei bestehenden Komponenten, wo ein Slot neben bereits existierendem Text- oder Label-Inhalt platziert wird (ergänzender/Addon-Slot), wird der Name zu `End` (oder `Start`) statt `Children`.
+- Das verdeutlicht die Rolle des Slots: `Children` = primärer Inhaltsbereich, `End`/`Start` = ergänzende Addon-Position.
 
-**Basic slot concept:**
+**Grundlegendes Slot-Konzept:**
 
 ```
 ┌─────────────────────────────────┐
 │  Start Slot                     │
-│  Children (default content)     │
+│  Children (Standardinhalt)      │
 │  End Slot                       │
 └─────────────────────────────────┘
 ```
 
-- Slots can be arranged **vertically or horizontally** depending on the component.
-- `Children` is the default/main content slot. In some components the design may only show a simple text label instead of a full slot – in that case, supplementary positions like `End` are used as additional slots.
-- `Start` and `End` are positional slots for content placed before or after the main content area.
+- Slots können je nach Komponente **vertikal oder horizontal** angeordnet sein.
+- `Children` ist der Standard-/Haupt-Inhalts-Slot. In manchen Komponenten zeigt das Design nur ein einfaches Text-Label statt eines vollständigen Slots — in dem Fall werden ergänzende Positionen wie `End` als zusätzliche Slots verwendet.
+- `Start` und `End` sind positionelle Slots für Inhalte vor bzw. nach dem Haupt-Inhaltsbereich.
 
 ---
 
-## 4. Variant Matrix (Stable Components)
+## 4. Variantenmatrix (Stabile Komponenten)
 
-### Structure
+### Struktur
 
-Stable components display a complete matrix of all state combinations:
+Stabile Komponenten zeigen eine vollständige Matrix aller Zustandskombinationen:
 
 ```
-X-axis: Interaction State → (Def) Enabled | Hovered | Pressed | Focused | Disabled
-Y-axis: Component State × Validation → e.g. Unchecked | Checked | Indeterminate × No Validation | Valid | Invalid
+X-Achse: Interaction State → (Def) Enabled | Hovered | Pressed | Focused | Disabled
+Y-Achse: Component State × Validation → z. B. Unchecked | Checked | Indeterminate × No Validation | Valid | Invalid
 ```
 
-### Rules
+### Regeln
 
-- All combinations must be covered – no gaps in the matrix.
-- `Disabled` is encoded as a separate boolean property (`Disabled=True`) combined with `Interaction State=None`.
-- Validation variants (`Valid`, `Invalid`) always include an Infotext sub-instance.
-- Sections organize variants by size (e.g. `(Def) Medium`, `Small`).
-
----
-
-## 5. Component Page Structure
-
-> For detailed page layout rules (positioning, spacing, Section organization), see the `db-ux-component-page-layout` skill.
-
-Each component page contains:
-
-- **Component.Overview instances** — documentation frames (see `db-ux-component-overview` skill)
-- **Sections** — grouping Component Sets by variant/direction/maturity
-- **Component Sets** — containing the variant matrices
-
-### Variant Frame Layout
-
-Within each variant frame, symbols (component instances) are arranged in a grid:
-
-- Columns = Interaction States
-- Rows = State combinations (Checked × Validation)
-- Each symbol is named with its full property set for easy identification.
+- Alle Kombinationen müssen abgedeckt sein — keine Lücken in der Matrix.
+- `Disabled` wird als separate Boolean-Property (`Disabled=True`) in Kombination mit `Interaction State=None` kodiert.
+- Validierungsvarianten (`Valid`, `Invalid`) enthalten immer eine Infotext-Sub-Instanz.
+- Sections organisieren Varianten nach Größe (z. B. `(Def) Medium`, `Small`).
 
 ---
 
-## 6. Maturity Status
+## 5. Komponentenseiten-Struktur
 
-| Suffix          | Meaning                               |
-| --------------- | ------------------------------------- |
-| `(Pre-Release)` | Usable but may change significantly   |
-| `(Beta)`        | Mostly stable, minor changes possible |
-| _(none)_        | Stable / Production-ready             |
+> Detaillierte Regeln zum Seitenlayout (Positionierung, Abstände, Section-Organisation) finden sich im `db-ux-component-page-layout`-Steering.
 
-Maturity is appended to the component name in the layer tree but not part of the variant property.
+Jede Komponentenseite enthält:
 
----
+- **Component.Overview-Instanzen** — Dokumentationsframes (siehe `db-ux-component-overview`-Steering)
+- **Sections** — Gruppierung von Component Sets nach Variante/Richtung/Maturity
+- **Component Sets** — enthalten die Variantenmatrizen
 
-## 7. Creating New Components (Core Lab)
+### Varianten-Frame-Layout
 
-When creating a new component in the Core Lab library, **always check the Core Components library first** for existing components that can serve as a reference. Look at:
+Innerhalb jedes Varianten-Frames sind Symbole (Komponenteninstanzen) in einem Grid angeordnet:
 
-- **Structure** – Layer hierarchy, container nesting, Auto Layout setup
-- **Properties** – Which properties exist, how they are named, which icons are used
-- **Naming** – Component name pattern, variant naming, layer naming
-- **Patterns** – Icon pattern, slot usage, screenreader texts, Code Connect placement
-
-Use the DB UX MCP server (`mcp_db_ux_get_component_props`, `mcp_db_ux_get_component_details`) to inspect existing components for reference before building new ones.
+- Spalten = Interaction States
+- Zeilen = Zustandskombinationen (Checked × Validation)
+- Jedes Symbol ist mit seinem vollständigen Property-Set benannt zur einfachen Identifikation.
 
 ---
 
-## References
+## 6. Maturity-Status
+
+| Suffix | Bedeutung |
+|--------|-----------|
+| `(Pre-Release)` | Nutzbar, kann sich aber noch deutlich ändern |
+| `(Beta)` | Weitgehend stabil, kleinere Änderungen möglich |
+| _(keines)_ | Stabil / Produktionsreif |
+
+Die Maturity wird im Layer-Tree an den Komponentennamen angehängt, ist aber nicht Teil der Variant-Property.
+
+---
+
+## 7. Neue Komponenten erstellen (Core Lab)
+
+Beim Erstellen einer neuen Komponente in der Core Lab Library **immer zuerst die Core Components Library prüfen**, ob bestehende Komponenten als Referenz dienen können. Dabei achten auf:
+
+- **Struktur** – Layer-Hierarchie, Container-Verschachtelung, Auto-Layout-Setup
+- **Properties** – Welche Properties existieren, wie sie benannt sind, welche Icons verwendet werden
+- **Naming** – Naming-Pattern für Komponenten, Varianten und Layer
+- **Muster** – Icon-Pattern, Slot-Nutzung, Screenreader-Texte, Code Connect Platzierung
+
+Den DB UX MCP Server (`mcp_db_ux_get_component_props`, `mcp_db_ux_get_component_details`) verwenden, um bestehende Komponenten als Referenz zu inspizieren, bevor neue gebaut werden.
+
+---
+
+## Referenzen
 
 - Core Components Library: https://www.figma.com/design/mlJ6R0GkfR15a93KSlqXtB
-- DB UX MCP Server: Available via Kiro Powers for component details, props, examples, and design tokens.
+- DB UX MCP Server: Verfügbar über Kiro Powers für Component Details, Props, Beispiele und Design Tokens.

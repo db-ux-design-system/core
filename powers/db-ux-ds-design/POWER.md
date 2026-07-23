@@ -1,46 +1,46 @@
 ---
 name: "db-ux-ds-design"
 displayName: "DB UX Design System"
-description: "Conventions, workflows, and review checklists for the DB UX Design System Figma libraries — component creation, page layout, and quality review."
+description: "Konventionen, Workflows und Review-Checklisten für die DB UX Design System Figma-Libraries — Komponentenerstellung, Seitenlayout und Qualitätsprüfung."
 keywords: ["figma", "design system", "component", "db ux", "design library", "component overview", "design review", "page layout"]
 author: "DB UX Design System Team"
 ---
 
 # DB UX Design System — Design Power
 
-## Overview
+## Überblick
 
-This power provides the DB UX Design Team with structured conventions and workflows for maintaining the Figma component libraries. It covers the lifecycle from building components to reviewing quality before publishing.
+Diese Power unterstützt das DB UX Design-Team mit strukturierten Konventionen und Workflows für die Pflege der Figma-Komponenten-Libraries. Sie begleitet den gesamten Lebenszyklus — vom Aufbau neuer Komponenten bis zur Qualitätsprüfung vor dem Publish.
 
-## Available Steering Files
+## Verfügbare Steering-Dateien
 
-Load the appropriate workflow based on the task:
+Je nach Aufgabe kann der passende Workflow geladen werden:
 
-| Task | Steering File | Description |
-|------|---------------|-------------|
-| Build/extend components | `design-library.md` | Naming, properties, structure conventions for Core Components |
-| Create Component.Overview frames | `component-overview.md` | Fill out the standardized documentation template in Figma |
-| Organize page layout | `component-page-layout.md` | Position Sections, Component Sets, spacing on a component page |
-| Review library/component quality | `design-review.md` | Structured checklist for spacing, colors, naming, structure |
+| Aufgabe | Steering-Datei | Beschreibung |
+|---------|----------------|--------------|
+| Komponenten erstellen/erweitern | `design-library.md` | Naming-, Property- und Strukturkonventionen für Core Components |
+| Component.Overview-Frames erstellen | `component-overview.md` | Standardisierte Dokumentationsvorlage in Figma ausfüllen |
+| Seitenlayout organisieren | `component-page-layout.md` | Sections, Component Sets und Abstände auf einer Komponentenseite positionieren |
+| Library-/Komponentenqualität prüfen | `design-review.md` | Strukturierte Checkliste für Abstände, Farben, Naming und Struktur |
 
-## When to Use
+## Wann verwenden
 
-Activate this power when working on:
+Diese Power sollte aktiviert werden bei:
 
-- Creating or modifying components in the DB UX Core Components Figma library
-- Filling out or updating Component.Overview documentation frames
-- Organizing/cleaning up component pages (layout, spacing, sorting)
-- Reviewing components or library pages for quality (design review)
+- Erstellung oder Änderung von Komponenten in der DB UX Core Components Figma-Library
+- Ausfüllen oder Aktualisieren von Component.Overview-Dokumentationsframes
+- Organisieren und Aufräumen von Komponentenseiten (Layout, Abstände, Sortierung)
+- Qualitätsprüfung von Komponenten oder Library-Seiten (Design Review)
 
-## Quick Start
+## Schnelleinstieg
 
-1. **Building a new component?** → Load `design-library.md` for naming and structure conventions
-2. **Done building?** → Load `component-overview.md` to create the documentation frame
-3. **After overview?** → Load `component-page-layout.md` to clean up the page
-4. **Before publishing?** → Load `design-review.md` to validate quality
+1. **Neue Komponente bauen?** → `design-library.md` laden für Naming- und Strukturkonventionen
+2. **Fertig gebaut?** → `component-overview.md` laden, um den Dokumentationsframe zu erstellen
+3. **Overview fertig?** → `component-page-layout.md` laden, um die Seite aufzuräumen
+4. **Vor dem Publish?** → `design-review.md` laden zur Qualitätsprüfung
 
-## Related Tools
+## Verwandte Tools
 
-This power works well with:
-- **Figma Power** (MCP) — for reading/writing Figma files programmatically
-- **DB UX MCP Server** — for component props, examples, design tokens, and migration guides
+Diese Power ergänzt sich gut mit:
+- **Figma Power** (MCP) — zum programmatischen Lesen und Schreiben von Figma-Dateien
+- **DB UX MCP Server** — für Component Props, Beispiele, Design Tokens und Migrationsanleitungen

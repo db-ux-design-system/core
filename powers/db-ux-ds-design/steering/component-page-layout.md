@@ -1,80 +1,80 @@
 # DB UX Design System – Component Page Layout
 
 
-This skill helps organize and clean up component pages in the DB UX Core Components Figma library. It handles the positioning, naming, and grouping of Component Sets, Sections, and Frames on a component page.
+Dieses Steering hilft beim Organisieren und Aufräumen von Komponentenseiten in der DB UX Core Components Figma-Library. Es regelt die Positionierung, Benennung und Gruppierung von Component Sets, Sections und Frames auf einer Komponentenseite.
 
-## Overview
+## Überblick
 
-Each component page in the library follows a consistent layout structure. This skill ensures that after adding new variants, refactoring, or creating overviews, the page is well-organized and navigable.
+Jede Komponentenseite in der Library folgt einer einheitlichen Layoutstruktur. Dieses Steering stellt sicher, dass die Seite nach dem Hinzufügen neuer Varianten, nach Refactoring oder nach dem Erstellen von Overviews gut organisiert und navigierbar bleibt.
 
-## Page Structure (Left to Right)
+## Seitenstruktur (von links nach rechts)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│  Overviews          │  Main Component Sets    │  Subcomponents  │  Deprecated │
+│  Overviews          │  Haupt-Component Sets   │  Subcomponents  │  Deprecated │
 │  (Component.Overview│  (Sections/Frames)      │  (Section)      │  (Section)  │
-│  instances)         │                         │                 │             │
+│  Instanzen)         │                         │                 │             │
 └─────────────────────────────────────────────────────────────────────────────┘
-y = 0 (top-aligned)
+y = 0 (oben ausgerichtet)
 ```
 
-### Column Order
+### Spaltenreihenfolge
 
-| Order | Content | Description |
-|-------|---------|-------------|
-| 1 | Component.Overview instances | Documentation (see `db-ux-component-overview` skill) |
-| 2 | Main Component Sets | The primary component variants (Sections like "Desktop", "Mobile") |
-| 3 | ↳ Subcomponents | Section containing sub-component sets (e.g. Header, Footer) |
-| 4 | Component Sets / Standalone Components | Ungrouped component sets or standalone components not in a section |
-| 5 | 🛟 Helpercomponents | Section containing internal helper components |
-| 6 | ❌ Deprecated | Section containing old/deprecated component sets (always last) |
+| Reihenfolge | Inhalt | Beschreibung |
+|-------------|--------|--------------|
+| 1 | Component.Overview-Instanzen | Dokumentation (siehe `db-ux-component-overview`-Skill) |
+| 2 | Haupt-Component Sets | Die primären Komponentenvarianten (Sections wie "Desktop", "Mobile") |
+| 3 | ↳ Subcomponents | Section mit Sub-Component Sets (z. B. Header, Footer) |
+| 4 | Component Sets / Standalone Components | Nicht gruppierte Component Sets oder Einzelkomponenten ohne Section |
+| 5 | 🛟 Helpercomponents | Section mit internen Hilfskomponenten |
+| 6 | ❌ Deprecated | Section mit alten/veralteten Component Sets (immer ganz rechts) |
 
-### Spacing Rules
+### Abstandsregeln
 
-| Between | Gap |
-|---------|-----|
+| Zwischen | Abstand |
+|----------|---------|
 | Overviews (horizontal) | 100px |
-| Last Overview → First Component Section | 100px |
+| Letzte Overview → erste Component Section | 100px |
 | Sections (horizontal) | 100px |
-| Component Sets within a Section (vertical) | Section internal padding |
-| Component Sets within a Section (horizontal) | Section internal padding |
+| Component Sets innerhalb einer Section (vertikal) | Internes Section-Padding |
+| Component Sets innerhalb einer Section (horizontal) | Internes Section-Padding |
 
-## Section Naming Conventions
+## Section-Benennungskonventionen
 
-| Pattern | Usage | Example |
-|---------|-------|---------|
-| Plain name | Main component direction/variant sections | "Desktop", "Mobile" |
-| `↳ Subcomponents` | Contains sub-component sets | "↳ Subcomponents" |
-| `❌ deprecated` | Contains deprecated/old component sets | "❌ deprecated" |
+| Muster | Verwendung | Beispiel |
+|--------|------------|----------|
+| Einfacher Name | Haupt-Richtungs-/Varianten-Sections | "Desktop", "Mobile" |
+| `↳ Subcomponents` | Enthält Sub-Component Sets | "↳ Subcomponents" |
+| `❌ deprecated` | Enthält veraltete Component Sets | "❌ deprecated" |
 
 ## Component Set Naming
 
-> Naming conventions are defined in `db-ux-design-library` § 1. Key patterns for page layout context:
+> Die Namenskonventionen sind in `db-ux-design-library` § 1 definiert. Relevante Muster im Kontext des Seitenlayouts:
 
-| Pattern | Usage | Example |
-|---------|-------|---------|
-| `ComponentName → Variant` | Main component with direction/type | "Drawer → (Def) Right", "SHELL → Desktop (Beta)" |
-| `↳ ComponentName SUBPART/Variant` | Sub-component | "↳ Drawer HEADER/(Def) Medium", "↳ Shell CONTENT" |
-| `❌ ComponentName → Variant (Deprecated)` | Deprecated set | "❌ Drawer → (Def) Right (Deprecated)" |
+| Muster | Verwendung | Beispiel |
+|--------|------------|----------|
+| `ComponentName → Variant` | Hauptkomponente mit Richtung/Typ | "Drawer → (Def) Right", "SHELL → Desktop (Beta)" |
+| `↳ ComponentName SUBPART/Variant` | Subkomponente | "↳ Drawer HEADER/(Def) Medium", "↳ Shell CONTENT" |
+| `❌ ComponentName → Variant (Deprecated)` | Veraltetes Set | "❌ Drawer → (Def) Right (Deprecated)" |
 
-## Frame/Section Internal Layout
+## Internes Frame-/Section-Layout
 
-### Sections containing multiple Component Sets
+### Sections mit mehreren Component Sets
 
-- **Padding:** 80px on all 4 sides
-- **Gap between Component Sets:** 100px (both horizontal and vertical)
-- **Layout logic:** Position children in a grid-like arrangement starting at (80, 80), with 100px gaps between rows and columns
-- **Resize to fit:** After positioning all children, resize the Section to fit its content: `width = rightmost child edge + 80`, `height = bottommost child edge + 80`
+- **Padding:** 80px auf allen 4 Seiten
+- **Abstand zwischen Component Sets:** 100px (horizontal und vertikal)
+- **Layout-Logik:** Kinder ab Position (80, 80) in einer gitterartigen Anordnung platzieren, mit 100px Abstand zwischen Zeilen und Spalten
+- **An Inhalt anpassen:** Nach der Positionierung aller Kinder die Section an ihren Inhalt anpassen: `width = rechte Kante des letzten Kindes + 80`, `height = untere Kante des letzten Kindes + 80`
 
-**Implementation:**
+**Implementierung:**
 ```js
-// Position children inside a section (vertical stacking by default)
+// Kinder innerhalb einer Section positionieren (standardmäßig vertikal gestapelt)
 function layoutSection(section) {
   const padding = 80;
   const gap = 100;
   const children = section.children;
   
-  // Stack vertically
+  // Vertikal stapeln
   let currentY = padding;
   
   for (const child of children) {
@@ -83,39 +83,39 @@ function layoutSection(section) {
     currentY += child.height + gap;
   }
   
-  // Resize section to fit
+  // Section an Inhalt anpassen
   const maxRight = Math.max(...children.map(c => c.x + c.width));
   const maxBottom = Math.max(...children.map(c => c.y + c.height));
   section.resizeWithoutConstraints(maxRight + padding, maxBottom + padding);
 }
 ```
 
-### Vertical stacking (single column)
+### Vertikale Stapelung (einzelne Spalte)
 
-When Component Sets are stacked vertically (e.g. multiple directions of the same component):
-- Start at (80, 80)
-- Each set below the previous with 100px vertical gap
-- Section width = widest child + 2 × 80
+Wenn Component Sets vertikal gestapelt werden (z. B. mehrere Richtungen derselben Komponente):
+- Start bei (80, 80)
+- Jedes Set unterhalb des vorherigen mit 100px vertikalem Abstand
+- Section-Breite = breitestes Kind + 2 × 80
 
-### Grid layout (grouped columns)
+### Grid-Layout (gruppierte Spalten)
 
-When children of a Section share a common **name prefix** (e.g. `Horizontal/...`, `Vertical/...`, `Tree/...`, `Flat Icon/...`), arrange them as a **column grid** grouped by prefix:
+Wenn Kinder einer Section ein gemeinsames **Namens-Präfix** teilen (z. B. `Horizontal/...`, `Vertical/...`, `Tree/...`, `Flat Icon/...`), werden sie als **Spalten-Grid** nach Präfix gruppiert angeordnet:
 
-- Each group becomes a column
-- Items within a group are stacked vertically (100px gap)
-- Columns are placed left-to-right (100px gap between columns)
-- All columns start at y = padding (80px)
+- Jede Gruppe wird zu einer Spalte
+- Elemente innerhalb einer Gruppe werden vertikal gestapelt (100px Abstand)
+- Spalten werden von links nach rechts platziert (100px Abstand zwischen Spalten)
+- Alle Spalten beginnen bei y = Padding (80px)
 
-**Detection:** If child names contain `/` separators where the first segment groups them logically, use grid layout.
+**Erkennung:** Wenn Kindernamen `/`-Trennzeichen enthalten, wobei das erste Segment sie logisch gruppiert, Grid-Layout verwenden.
 
-**Implementation:**
+**Implementierung:**
 ```js
 function layoutSectionAsGrid(section) {
   const padding = 80;
   const gap = 100;
   const children = [...section.children];
   
-  // Group by first path segment
+  // Nach erstem Pfadsegment gruppieren
   const groups = {};
   for (const child of children) {
     const prefix = child.name.split("/")[0];
@@ -123,7 +123,7 @@ function layoutSectionAsGrid(section) {
     groups[prefix].push(child);
   }
   
-  // Layout columns
+  // Spalten layouten
   let columnX = padding;
   for (const [groupName, items] of Object.entries(groups)) {
     let currentY = padding;
@@ -138,70 +138,70 @@ function layoutSectionAsGrid(section) {
     columnX += columnWidth + gap;
   }
   
-  // Resize to fit
+  // An Inhalt anpassen
   const maxRight = Math.max(...children.map(c => c.x + c.width));
   const maxBottom = Math.max(...children.map(c => c.y + c.height));
   section.resizeWithoutConstraints(maxRight + padding, maxBottom + padding);
 }
 ```
 
-### Single Component Set (no Section wrapper)
+### Einzelnes Component Set (ohne Section-Wrapper)
 
-Standalone Component Sets (not wrapped in a Section) are placed directly at the appropriate x position, top-aligned.
+Standalone Component Sets (nicht in einer Section verpackt) werden direkt an der passenden x-Position platziert, oben ausgerichtet.
 
 ## Workflow
 
-### Input Required
+### Benötigte Eingaben
 
-1. **Component page URL or name** — which page to organize
-2. **File key** — which Figma file
+1. **Komponentenseiten-URL oder -Name** — welche Seite organisiert werden soll
+2. **File Key** — welche Figma-Datei
 
-### Steps
+### Schritte
 
-1. **Analyze** — Read the page structure, identify all Component Sets, Sections, Frames, and Overview instances
-2. **Propose layout** — Present the proposed organization:
-   - Which elements go in which column
-   - Naming corrections if needed
-   - Deprecated items to move
-3. **Execute** — After user confirmation:
-   - Move Overviews to x=0, y=0 (left)
-   - Move main Component Sets/Sections to the right of Overviews
-   - Move Subcomponents section after main sets
-   - Move Deprecated section to the far right
-   - Apply consistent y=0 top-alignment
-   - Ensure consistent gaps (100px)
+1. **Analysieren** — Seitenstruktur lesen, alle Component Sets, Sections, Frames und Overview-Instanzen identifizieren
+2. **Layout vorschlagen** — Vorgeschlagene Organisation präsentieren:
+   - Welche Elemente in welche Spalte kommen
+   - Nötige Korrekturen bei der Benennung
+   - Veraltete Elemente, die verschoben werden müssen
+3. **Ausführen** — Nach Bestätigung durch den User:
+   - Overviews nach x=0, y=0 verschieben (links)
+   - Haupt-Component Sets/Sections rechts neben die Overviews verschieben
+   - Subcomponents-Section nach den Haupt-Sets platzieren
+   - Deprecated-Section ganz nach rechts verschieben
+   - Konsistente Ausrichtung y=0 oben sicherstellen
+   - Einheitliche Abstände (100px) einhalten
 
-### Rules
+### Regeln
 
-| Rule | Details |
-|------|---------|
-| Top-align everything | All top-level elements (Overviews, Sections, Component Sets) start at y=0 |
-| Preserve internal layout | Don't rearrange content inside Sections — only move the Sections themselves |
-| Deprecated at the end | Always place deprecated content in the rightmost position |
-| Subcomponents after main | Subcomponent section always comes after main component sections |
-| Don't remove anything | Only reposition — never delete or hide elements during cleanup |
-| Sort children | Within a Section, sort sibling Component Sets/Components **alphabetically by name**, with `(Def)` prefixed items always first. E.g. "(Def) Top" → "Bottom" → "Flat Icon" |
-| One Overview per component | Each distinct subcomponent gets its own Overview. Don't combine unrelated subcomponents into a single Overview just because they share a Section. E.g. Primary Actions, Secondary Actions, Meta Navigation, and Brand each get their own Overview — even though they all live in the "↳ Subcomponents" Section. |
-| Overview order | Overviews are ordered: Main component(s) first, then Subcomponent overviews. Within each group, order alphabetically. |
-| Status suffix | Component Sets with "(Beta)", "(Deprecated)" etc. keep their suffixes |
+| Regel | Details |
+|-------|---------|
+| Alles oben ausrichten | Alle Top-Level-Elemente (Overviews, Sections, Component Sets) beginnen bei y=0 |
+| Internes Layout beibehalten | Inhalte innerhalb von Sections nicht umordnen — nur die Sections selbst verschieben |
+| Deprecated am Ende | Veralteter Inhalt immer an der rechtesten Position platzieren |
+| Subcomponents nach Haupt | Subcomponent-Section kommt immer nach den Haupt-Component-Sections |
+| Nichts löschen | Nur umpositionieren — niemals Elemente beim Aufräumen löschen oder ausblenden |
+| Kinder sortieren | Innerhalb einer Section Geschwister-Component Sets/Components **alphabetisch nach Name** sortieren, wobei `(Def)`-Einträge immer zuerst kommen. Z. B. "(Def) Top" → "Bottom" → "Flat Icon" |
+| Eine Overview pro Komponente | Jede eigenständige Subkomponente bekommt eine eigene Overview. Nicht zusammenhängende Subkomponenten nicht in einer einzigen Overview zusammenfassen, nur weil sie eine Section teilen. Z. B. Primary Actions, Secondary Actions, Meta Navigation und Brand bekommen jeweils eine eigene Overview — auch wenn sie alle in der "↳ Subcomponents"-Section leben. |
+| Overview-Reihenfolge | Overviews werden sortiert: Hauptkomponente(n) zuerst, dann Subcomponent-Overviews. Innerhalb jeder Gruppe alphabetisch sortieren. |
+| Status-Suffix | Component Sets mit "(Beta)", "(Deprecated)" etc. behalten ihre Suffixe |
 
-## Example: Drawer Page Layout
+## Beispiel: Drawer Seitenlayout
 
 ```
-x=0:     Component.Overview (Drawer)        [1440px wide]
-x=1540:  Component.Overview (Drawer Header) [1440px wide]  
-x=3080:  Component.Overview (Drawer Footer) [1440px wide]
+x=0:     Component.Overview (Drawer)        [1440px breit]
+x=1540:  Component.Overview (Drawer Header) [1440px breit]  
+x=3080:  Component.Overview (Drawer Footer) [1440px breit]
 x=4620:  Drawer → (Def) Right              [Component Set]
 x=5800:  Drawer → Left                     [Component Set]
 x=6980:  Drawer → Bottom                   [Component Set]
 x=9285:  Drawer → Top                      [Component Set]
-x=11590: Section "↳ Subcomponents"          [Header + Footer components]
-x=12170: Section "❌ deprecated"            [Old deprecated sets]
+x=11590: Section "↳ Subcomponents"          [Header + Footer Komponenten]
+x=12170: Section "❌ deprecated"            [Alte veraltete Sets]
 ```
 
-## Notes
+## Hinweise
 
-- Run this skill **after** creating/updating Component Overviews
-- Large pages with many variants may need manual judgment for grouping
-- If a component has both Desktop and Mobile variants as separate sets, group them in their own Sections
-- The `db-ux-component-overview` skill references this skill for final page organization
+- Dieses Steering **nach** dem Erstellen/Aktualisieren von Component Overviews ausführen
+- Große Seiten mit vielen Varianten erfordern möglicherweise manuelle Entscheidungen bei der Gruppierung
+- Wenn eine Komponente sowohl Desktop- als auch Mobile-Varianten als separate Sets hat, diese in eigenen Sections gruppieren
+- Das `db-ux-component-overview`-Steering verweist auf dieses Steering für die abschließende Seitenorganisation
